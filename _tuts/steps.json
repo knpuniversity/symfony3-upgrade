@@ -31,6 +31,11 @@
             "description": null
         },
         {
+            "id": "deprecations-upgrade-problematic-deps",
+            "name": "Deprecations: Upgrade problematic deps",
+            "description": null
+        },
+        {
             "id": "dir-structure-autoload-appkernel",
             "name": "Dir Structure: Autoload AppKernel",
             "description": null
@@ -81,5 +86,5 @@
             "description": null
         }
     ],
-    "sha": "05e0a0ac8a17fde450396f0d958e79adb859c437"
+    "sha": "ded67a7800dd96cf91a016c212575fc4f6727b3b"
 }
