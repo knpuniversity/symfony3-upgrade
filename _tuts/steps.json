@@ -66,6 +66,11 @@
             "description": null
         },
         {
+            "id": "dir-structure-assets-key",
+            "name": "Dir Structure: assets key",
+            "description": null
+        },
+        {
             "id": "upgrade-change-composer-json-to-3-0",
             "name": "Upgrade: change composer.json to 3.0",
             "description": null
@@ -76,5 +81,5 @@
             "description": null
         }
     ],
-    "sha": "10327cd2cb184d6211a57e17160e7ac85784cfe6"
+    "sha": "05e0a0ac8a17fde450396f0d958e79adb859c437"
 }

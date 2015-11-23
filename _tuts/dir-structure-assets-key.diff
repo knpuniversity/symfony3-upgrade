@@ -1,0 +1,12 @@
+diff --git a/app/config/config.yml b/app/config/config.yml
+index f0a91e4..e4e79f3 100644
+--- a/app/config/config.yml
++++ b/app/config/config.yml
+@@ -45,6 +45,7 @@ framework:
+         handler_id:  ~
+     fragments:       ~
+     http_method_override: true
++    assets: ~
+ 
+ # Twig Configuration (used for rendering application templates)
+ twig:
