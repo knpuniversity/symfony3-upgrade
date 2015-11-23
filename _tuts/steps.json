@@ -1,0 +1,45 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "upgrade-2-8-updating-composer",
+            "name": "Upgrade 2.8: Updating composer",
+            "description": null
+        },
+        {
+            "id": "deprecations-run-fixer",
+            "name": "Deprecations: Run fixer",
+            "description": null
+        },
+        {
+            "id": "deprecations-use-detector",
+            "name": "Deprecations: Use detector",
+            "description": null
+        },
+        {
+            "id": "deprecations-fixing-more-forms",
+            "name": "Deprecations: Fixing more forms",
+            "description": null
+        },
+        {
+            "id": "deprecations-hunting-down",
+            "name": "Deprecations: Hunting down '@'",
+            "description": null
+        },
+        {
+            "id": "upgrade-change-composer-json-to-3-0",
+            "name": "Upgrade: change composer.json to 3.0",
+            "description": null
+        },
+        {
+            "id": "upgrade-change-other-dep-versions",
+            "name": "Upgrade: change other dep versions",
+            "description": null
+        }
+    ],
+    "sha": "0d52155e3e24954e4ded42e6152ac30a46e00b58"
+}

@@ -1,0 +1,47 @@
+diff --git a/app/config/routing.yml b/app/config/routing.yml
+index 883ec6d..088705d 100644
+--- a/app/config/routing.yml
++++ b/app/config/routing.yml
+@@ -5,7 +5,7 @@
+ # the routes in YAML, XML or PHP files.
+ # See http://symfony.com/doc/current/book/routing.html
+ app:
+-    resource: @AppBundle/Controller/
++    resource: '@AppBundle/Controller/'
+     type:     annotation
+     prefix:   /{_locale}
+     requirements:
+diff --git a/app/config/services.yml b/app/config/services.yml
+index ebb0f82..ffb6772 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -12,7 +12,7 @@ services:
+     app.twig.app_extension:
+         public:    false
+         class:     AppBundle\Twig\AppExtension
+-        arguments: [@markdown, %app_locales%]
++        arguments: ['@markdown', %app_locales%]
+         tags:
+             - { name: twig.extension }
+ 
+@@ -24,7 +24,7 @@ services:
+ 
+     app.redirect_to_preferred_locale_listener:
+         class: AppBundle\EventListener\RedirectToPreferredLocaleListener
+-        arguments: [@router, %app_locales%, %locale%]
++        arguments: ['@router', %app_locales%, %locale%]
+         tags:
+             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+ 
+diff --git a/src/CodeExplorerBundle/Resources/config/services.yml b/src/CodeExplorerBundle/Resources/config/services.yml
+index 97ee376..419e25d 100644
+--- a/src/CodeExplorerBundle/Resources/config/services.yml
++++ b/src/CodeExplorerBundle/Resources/config/services.yml
+@@ -8,6 +8,6 @@ services:
+ 
+     code_explorer.controller_listener:
+         class:     CodeExplorerBundle\EventListener\ControllerListener
+-        arguments: [@code_explorer.twig.source_code_extension]
++        arguments: ['@code_explorer.twig.source_code_extension']
+         tags:
+             - { name: kernel.event_listener, event: kernel.controller, method: registerCurrentController }

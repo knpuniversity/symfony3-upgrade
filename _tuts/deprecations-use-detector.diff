@@ -1,0 +1,55 @@
+diff --git a/src/AppBundle/Form/CommentType.php b/src/AppBundle/Form/CommentType.php
+index 486acb4..7007aa6 100644
+--- a/src/AppBundle/Form/CommentType.php
++++ b/src/AppBundle/Form/CommentType.php
+@@ -52,14 +52,4 @@ class CommentType extends AbstractType
+             'data_class' => 'AppBundle\Entity\Comment',
+         ));
+     }
+-
+-    /**
+-     * {@inheritdoc}
+-     */
+-    public function getName()
+-    {
+-        // Best Practice: use 'app_' as the prefix of your custom form types names
+-        // see http://symfony.com/doc/current/best_practices/forms.html#custom-form-field-types
+-        return 'app_comment';
+-    }
+ }
+diff --git a/src/AppBundle/Form/PostType.php b/src/AppBundle/Form/PostType.php
+index 9fdf7d9..f44645a 100644
+--- a/src/AppBundle/Form/PostType.php
++++ b/src/AppBundle/Form/PostType.php
+@@ -66,14 +66,4 @@ class PostType extends AbstractType
+             'data_class' => 'AppBundle\Entity\Post',
+         ));
+     }
+-
+-    /**
+-     * {@inheritdoc}
+-     */
+-    public function getName()
+-    {
+-        // Best Practice: use 'app_' as the prefix of your custom form types names
+-        // see http://symfony.com/doc/current/best_practices/forms.html#custom-form-field-types
+-        return 'app_post';
+-    }
+ }
+diff --git a/src/AppBundle/Form/Type/DateTimePickerType.php b/src/AppBundle/Form/Type/DateTimePickerType.php
+index c9bc133..ca006bf 100644
+--- a/src/AppBundle/Form/Type/DateTimePickerType.php
++++ b/src/AppBundle/Form/Type/DateTimePickerType.php
+@@ -63,12 +63,4 @@ class DateTimePickerType extends AbstractType
+     {
+         return DateTimeType::class;
+     }
+-
+-    /**
+-     * {@inheritdoc}
+-     */
+-    public function getName()
+-    {
+-        return 'app_datetimepicker';
+-    }
+ }

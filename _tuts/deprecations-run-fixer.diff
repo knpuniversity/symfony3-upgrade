@@ -1,0 +1,50 @@
+diff --git a/src/AppBundle/Form/PostType.php b/src/AppBundle/Form/PostType.php
+index 9895a74..9fdf7d9 100644
+--- a/src/AppBundle/Form/PostType.php
++++ b/src/AppBundle/Form/PostType.php
+@@ -11,6 +11,8 @@
+ 
+ namespace AppBundle\Form;
+ 
++use Symfony\Component\Form\Extension\Core\Type\TextareaType;
++use Symfony\Component\Form\Extension\Core\Type\EmailType;
+ use Symfony\Component\Form\AbstractType;
+ use Symfony\Component\Form\FormBuilderInterface;
+ use Symfony\Component\OptionsResolver\OptionsResolver;
+@@ -43,12 +45,12 @@ class PostType extends AbstractType
+                 'attr' => array('autofocus' => true),
+                 'label' => 'label.title',
+             ))
+-            ->add('summary', 'textarea', array('label' => 'label.summary'))
+-            ->add('content', 'textarea', array(
++            ->add('summary', TextareaType::class, array('label' => 'label.summary'))
++            ->add('content', TextareaType::class, array(
+                 'attr' => array('rows' => 20),
+                 'label' => 'label.content',
+             ))
+-            ->add('authorEmail', 'email', array('label' => 'label.author_email'))
++            ->add('authorEmail', EmailType::class, array('label' => 'label.author_email'))
+             ->add('publishedAt', 'app_datetimepicker', array(
+                 'label' => 'label.published_at',
+             ))
+diff --git a/src/AppBundle/Form/Type/DateTimePickerType.php b/src/AppBundle/Form/Type/DateTimePickerType.php
+index 464bad9..c9bc133 100644
+--- a/src/AppBundle/Form/Type/DateTimePickerType.php
++++ b/src/AppBundle/Form/Type/DateTimePickerType.php
+@@ -11,6 +11,7 @@
+ 
+ namespace AppBundle\Form\Type;
+ 
++use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+ use AppBundle\Utils\MomentFormatConverter;
+ use Symfony\Component\Form\AbstractType;
+ use Symfony\Component\Form\FormInterface;
+@@ -60,7 +61,7 @@ class DateTimePickerType extends AbstractType
+      */
+     public function getParent()
+     {
+-        return 'datetime';
++        return DateTimeType::class;
+     }
+ 
+     /**

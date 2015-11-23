@@ -1,0 +1,34 @@
+diff --git a/src/AppBundle/Controller/Admin/BlogController.php b/src/AppBundle/Controller/Admin/BlogController.php
+index 61a0f94..9c2caea 100644
+--- a/src/AppBundle/Controller/Admin/BlogController.php
++++ b/src/AppBundle/Controller/Admin/BlogController.php
+@@ -146,7 +146,7 @@ class BlogController extends Controller
+ 
+         $entityManager = $this->getDoctrine()->getManager();
+ 
+-        $editForm = $this->createForm(new PostType(), $post);
++        $editForm = $this->createForm(PostType::class, $post);
+         $deleteForm = $this->createDeleteForm($post);
+ 
+         $editForm->handleRequest($request);
+diff --git a/src/AppBundle/Form/PostType.php b/src/AppBundle/Form/PostType.php
+index f44645a..a962112 100644
+--- a/src/AppBundle/Form/PostType.php
++++ b/src/AppBundle/Form/PostType.php
+@@ -11,6 +11,7 @@
+ 
+ namespace AppBundle\Form;
+ 
++use AppBundle\Form\Type\DateTimePickerType;
+ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+ use Symfony\Component\Form\Extension\Core\Type\EmailType;
+ use Symfony\Component\Form\AbstractType;
+@@ -51,7 +52,7 @@ class PostType extends AbstractType
+                 'label' => 'label.content',
+             ))
+             ->add('authorEmail', EmailType::class, array('label' => 'label.author_email'))
+-            ->add('publishedAt', 'app_datetimepicker', array(
++            ->add('publishedAt', DateTimePickerType::class, array(
+                 'label' => 'label.published_at',
+             ))
+         ;

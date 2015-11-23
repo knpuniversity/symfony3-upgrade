@@ -1,0 +1,13 @@
+diff --git a/composer.json b/composer.json
+index 2761a12..5da093c 100644
+--- a/composer.json
++++ b/composer.json
+@@ -28,7 +28,7 @@
+         "twig/extensions"                      : "~1.2"
+     },
+     "require-dev": {
+-        "sensio/generator-bundle": "~2.3"
++        "sensio/generator-bundle": "~3.0"
+     },
+     "scripts": {
+         "post-install-cmd": [
