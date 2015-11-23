@@ -29,6 +29,6 @@ chapters:
     new-dir-structure:
         is_finished: false
         video_key: ~
-    upgrade-3.0
+    upgrade-3.0:
         is_finished: false
         video_key: ~
