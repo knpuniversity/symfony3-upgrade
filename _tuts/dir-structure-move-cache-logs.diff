@@ -1,0 +1,36 @@
+diff --git a/app/AppKernel.php b/app/AppKernel.php
+index 7206f61..24cfb6d 100644
+--- a/app/AppKernel.php
++++ b/app/AppKernel.php
+@@ -44,4 +44,19 @@ class AppKernel extends Kernel
+     {
+         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+     }
++
++    public function getRootDir()
++    {
++        return __DIR__;
++    }
++
++    public function getCacheDir()
++    {
++        return dirname(__DIR__).'/var/cache/'.$this->environment;
++    }
++
++    public function getLogDir()
++    {
++        return dirname(__DIR__).'/var/logs';
++    }
+ }
+diff --git a/app/cache/.gitkeep b/app/cache/.gitkeep
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/app/logs/.gitkeep b/app/logs/.gitkeep
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/var/cache/.gitkeep b/var/cache/.gitkeep
+new file mode 100644
+index 0000000..e69de29
+diff --git a/var/logs/.gitkeep b/var/logs/.gitkeep
+new file mode 100644
+index 0000000..e69de29

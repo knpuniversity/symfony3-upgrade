@@ -1,8 +1,8 @@
 diff --git a/composer.json b/composer.json
-index 08f1671..2761a12 100644
+index a4508bc..e61b3eb 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -24,7 +24,7 @@
+@@ -28,7 +28,7 @@
          "symfony/assetic-bundle"               : "~2.6",
          "symfony/monolog-bundle"               : "~2.7",
          "symfony/swiftmailer-bundle"           : "~2.3",

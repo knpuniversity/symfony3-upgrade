@@ -31,6 +31,41 @@
             "description": null
         },
         {
+            "id": "dir-structure-autoload-appkernel",
+            "name": "Dir Structure: Autoload AppKernel",
+            "description": null
+        },
+        {
+            "id": "dir-structure-move-cache-logs",
+            "name": "Dir Structure: Move cache\/logs",
+            "description": null
+        },
+        {
+            "id": "dir-structure-move-app-console",
+            "name": "Dir Structure: Move app\/console",
+            "description": null
+        },
+        {
+            "id": "dir-structure-composer-json-values",
+            "name": "Dir Structure: composer.json values",
+            "description": null
+        },
+        {
+            "id": "dir-structure-move-tests",
+            "name": "Dir Structure: Move tests",
+            "description": null
+        },
+        {
+            "id": "dir-structure-update-phpunit-xml-dist",
+            "name": "Dir Structure: Update phpunit.xml.dist",
+            "description": null
+        },
+        {
+            "id": "dir-structure-update-gitignore",
+            "name": "Dir Structure: Update .gitignore",
+            "description": null
+        },
+        {
             "id": "upgrade-change-composer-json-to-3-0",
             "name": "Upgrade: change composer.json to 3.0",
             "description": null
@@ -41,5 +76,5 @@
             "description": null
         }
     ],
-    "sha": "0d52155e3e24954e4ded42e6152ac30a46e00b58"
+    "sha": "10327cd2cb184d6211a57e17160e7ac85784cfe6"
 }

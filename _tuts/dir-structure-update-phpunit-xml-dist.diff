@@ -1,0 +1,29 @@
+diff --git a/phpunit.xml.dist b/phpunit.xml.dist
+index bd24527..284bfa2 100644
+--- a/phpunit.xml.dist
++++ b/phpunit.xml.dist
+@@ -11,21 +11,17 @@
+     processIsolation            = "false"
+     stopOnFailure               = "false"
+     syntaxCheck                 = "false"
+-    bootstrap                   = "bootstrap.php.cache" >
++    bootstrap                   = "app/autoload.php" >
+ 
+     <testsuites>
+         <testsuite name="Project Test Suite">
+-            <directory>../src/*Bundle/Tests</directory>
+-            <directory>../src/*/*Bundle/Tests</directory>
+-            <directory>../src/*/Bundle/*Bundle/Tests</directory>
++            <directory>tests</directory>
+         </testsuite>
+     </testsuites>
+ 
+-    <!--
+     <php>
+-        <server name="KERNEL_DIR" value="/path/to/your/app/" />
++        <server name="KERNEL_DIR" value="app/" />
+     </php>
+-    -->
+ 
+     <filter>
+         <whitelist>

@@ -1,0 +1,64 @@
+diff --git a/app/AppCache.php b/app/AppCache.php
+index ddb51db..639ec2c 100644
+--- a/app/AppCache.php
++++ b/app/AppCache.php
+@@ -1,7 +1,5 @@
+ <?php
+ 
+-require_once __DIR__.'/AppKernel.php';
+-
+ use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
+ 
+ class AppCache extends HttpCache
+diff --git a/app/console b/app/console
+index fa6a36e..b405752 100755
+--- a/app/console
++++ b/app/console
+@@ -8,7 +8,6 @@
+ set_time_limit(0);
+ 
+ require_once __DIR__.'/bootstrap.php.cache';
+-require_once __DIR__.'/AppKernel.php';
+ 
+ use Symfony\Bundle\FrameworkBundle\Console\Application;
+ use Symfony\Component\Console\Input\ArgvInput;
+diff --git a/composer.json b/composer.json
+index bba3ec8..43f9e60 100644
+--- a/composer.json
++++ b/composer.json
+@@ -4,7 +4,8 @@
+     "type": "project",
+     "description": "Symfony Demo Application",
+     "autoload": {
+-        "psr-4": { "": "src/" }
++        "psr-4": { "": "src/" },
++        "files": ["app/AppKernel.php"]
+     },
+     "require": {
+         "php"                                  : ">=5.3.9",
+diff --git a/web/app.php b/web/app.php
+index 68dd7ab..5101ab8 100644
+--- a/web/app.php
++++ b/web/app.php
+@@ -24,8 +24,6 @@ $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
+ // $loader->unregister();
+ // $apcLoader->register(true);
+ 
+-require_once __DIR__.'/../app/AppKernel.php';
+-
+ $kernel = new AppKernel('prod', false);
+ $kernel->loadClassCache();
+ 
+diff --git a/web/app_dev.php b/web/app_dev.php
+index aecc9fd..698c1d1 100644
+--- a/web/app_dev.php
++++ b/web/app_dev.php
+@@ -28,8 +28,6 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
+ $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
+ Debug::enable();
+ 
+-require_once __DIR__.'/../app/AppKernel.php';
+-
+ $kernel = new AppKernel('dev', true);
+ $kernel->loadClassCache();
+ $request = Request::createFromGlobals();

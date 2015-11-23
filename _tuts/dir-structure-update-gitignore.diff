@@ -1,0 +1,20 @@
+diff --git a/.gitignore b/.gitignore
+index c279389..4e5f094 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,11 +1,7 @@
+-/app/bootstrap.php.cache
+-/app/cache/*
+-!app/cache/.gitkeep
++/var/
++!var/cache/.gitkeep
++!var/logs/.gitkeep
+ /app/config/parameters.yml
+-/app/logs/*
+-!app/logs/.gitkeep
+-/app/phpunit.xml
+-/bin/
+-/composer.phar
++/phpunit.xml
+ /vendor/
+ /web/bundles/
