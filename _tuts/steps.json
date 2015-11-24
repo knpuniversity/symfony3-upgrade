@@ -11,31 +11,6 @@
             "description": null
         },
         {
-            "id": "deprecations-run-fixer",
-            "name": "Deprecations: Run fixer",
-            "description": null
-        },
-        {
-            "id": "deprecations-use-detector",
-            "name": "Deprecations: Use detector",
-            "description": null
-        },
-        {
-            "id": "deprecations-fixing-more-forms",
-            "name": "Deprecations: Fixing more forms",
-            "description": null
-        },
-        {
-            "id": "deprecations-hunting-down",
-            "name": "Deprecations: Hunting down '@'",
-            "description": null
-        },
-        {
-            "id": "deprecations-upgrade-problematic-deps",
-            "name": "Deprecations: Upgrade problematic deps",
-            "description": null
-        },
-        {
             "id": "dir-structure-autoload-appkernel",
             "name": "Dir Structure: Autoload AppKernel",
             "description": null
@@ -73,6 +48,31 @@
         {
             "id": "dir-structure-assets-key",
             "name": "Dir Structure: assets key",
+            "description": null
+        },
+        {
+            "id": "deprecations-run-fixer",
+            "name": "Deprecations: Run fixer",
+            "description": null
+        },
+        {
+            "id": "deprecations-use-detector",
+            "name": "Deprecations: Use detector",
+            "description": null
+        },
+        {
+            "id": "deprecations-fixing-more-forms",
+            "name": "Deprecations: Fixing more forms",
+            "description": null
+        },
+        {
+            "id": "deprecations-hunting-down",
+            "name": "Deprecations: Hunting down '@'",
+            "description": null
+        },
+        {
+            "id": "deprecations-upgrade-problematic-deps",
+            "name": "Deprecations: Upgrade problematic deps",
             "description": null
         },
         {
