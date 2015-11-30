@@ -1,4 +1,10 @@
-# Upgrade 2.8
+# How to Upgrade to Symfony 2.8
+
+***TIP
+The video for this tutorial will be ready **very** soon!
+***
+
+**Confused by the First Paragraph? https://www.youtube.com/watch?v=K7zNY0I5JNI**
 
 The Symfony Demo: example app: a project barely alive... on Symfony 2.7.
 Ladies and gentleman, we can rebuild it, we have the technology. We have
@@ -11,9 +17,18 @@ really cool too: because it'll give us all of the features of Symfony 3.
 
 To get to 2.8, open the `composer.json` file, find the `symfony/symfony` line and
 set it to 2.8. At recording, Symfony 2.8 wasn't released yet so I'll set this
-to `2.8.*@BETA`. But you - person-living-in-the-future - you should set it to `2.8.*`. 
+to `2.8.*@BETA`:
 
-Head over to the terminal and run `composer update symfony/symfony --with-dependencies`.
+[[[ code('aa5ae1386f') ]]]
+
+But you - person-living-in-the-future - you should set it to `2.8.*`. 
+
+Head over to the terminal and run:
+
+```bash
+composer update symfony/symfony --with-dependencies
+```
+
 This will download 2.8 *and* update any other libraries that Symfony depends on.
 
 Yes yes, I realize that we're ignoring potential updates of all of these other bundles
