@@ -51,6 +51,11 @@
             "description": null
         },
         {
+            "id": "deprecations-upgrade-problematic-deps",
+            "name": "Deprecations: Upgrade problematic deps",
+            "description": null
+        },
+        {
             "id": "deprecations-run-fixer",
             "name": "Deprecations: Run fixer",
             "description": null
@@ -68,11 +73,6 @@
         {
             "id": "deprecations-hunting-down",
             "name": "Deprecations: Hunting down '@'",
-            "description": null
-        },
-        {
-            "id": "deprecations-upgrade-problematic-deps",
-            "name": "Deprecations: Upgrade problematic deps",
             "description": null
         },
         {
