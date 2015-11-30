@@ -26,7 +26,13 @@ chapters:
     new-dir-structure:
         is_finished: true
         video_key: ~
-    fix-deprecations:
+    fix-deprecations-in-bundles:
+        is_finished: false
+        video_key: ~
+    deprecation-fixing-tools:
+        is_finished: false
+        video_key: ~
+    fix-my-deprecations:
         is_finished: false
         video_key: ~
     upgrade-3.0:

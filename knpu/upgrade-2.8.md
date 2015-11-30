@@ -1,9 +1,5 @@
 # How to Upgrade to Symfony 2.8
 
-***TIP
-The video for this tutorial will be ready **very** soon!
-***
-
 **Confused by the First Paragraph? https://www.youtube.com/watch?v=K7zNY0I5JNI**
 
 The Symfony Demo: example app: a project barely alive... on Symfony 2.7.
