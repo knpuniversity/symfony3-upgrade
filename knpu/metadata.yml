@@ -21,10 +21,10 @@ tuts_hero:
 
 chapters:
     upgrade-2.8:
-        is_finished: false
+        is_finished: true
         video_key: ~
     new-dir-structure:
-        is_finished: false
+        is_finished: true
         video_key: ~
     fix-deprecations:
         is_finished: false
