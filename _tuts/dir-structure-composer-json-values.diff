@@ -917,7 +917,7 @@ index 60ae0a8..0000000
 -    return $support;
 -}
 diff --git a/composer.json b/composer.json
-index 26ce804..1c9baf1 100644
+index 5d533c6..4e8c179 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -52,6 +52,9 @@

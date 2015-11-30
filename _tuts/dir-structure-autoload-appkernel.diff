@@ -23,7 +23,7 @@ index fa6a36e..b405752 100755
  use Symfony\Bundle\FrameworkBundle\Console\Application;
  use Symfony\Component\Console\Input\ArgvInput;
 diff --git a/composer.json b/composer.json
-index bba3ec8..43f9e60 100644
+index 7276223..46edb1d 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -4,7 +4,8 @@

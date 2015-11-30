@@ -1,19 +1,19 @@
 diff --git a/composer.lock b/composer.lock
-index f033f90..a41e170 100644
+index f206749..937b3a9 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,8 +4,8 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
          "This file is @generated automatically"
      ],
--    "hash": "bdb1978e0957ff0bc64bb4314764084c",
--    "content-hash": "e23c13e43ddccdf38218d983fccffad0",
-+    "hash": "c8e9aaaf51c1f5b989eb704acac9b130",
-+    "content-hash": "58746623f8bd3587a289819eb8a23cf1",
+-    "hash": "4aec869a6b501085f55096913213b7cc",
+-    "content-hash": "7dd99378871c03e17d39e2da0761c002",
++    "hash": "56be994b21b444f8f727896212a0eaa6",
++    "content-hash": "27a6970f8ea801280e2f638ac1771517",
      "packages": [
          {
              "name": "doctrine/annotations",
-@@ -1121,26 +1121,26 @@
+@@ -1124,26 +1124,26 @@
          },
          {
              "name": "knplabs/knp-paginator-bundle",
@@ -47,7 +47,7 @@ index f033f90..a41e170 100644
              },
              "type": "symfony-bundle",
              "extra": {
-@@ -1178,42 +1178,41 @@
+@@ -1181,7 +1181,7 @@
                  "pagination",
                  "paginator"
              ],
@@ -56,64 +56,7 @@ index f033f90..a41e170 100644
          },
          {
              "name": "kriswallsmith/assetic",
--            "version": "v1.3.1",
-+            "version": "v1.3.2",
-             "source": {
-                 "type": "git",
-                 "url": "https://github.com/kriswallsmith/assetic.git",
--                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
-+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5"
-             },
-             "dist": {
-                 "type": "zip",
--                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
--                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
-+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/9928f7c4ad98b234e3559d1049abd13387f86db5",
-+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5",
-                 "shasum": ""
-             },
-             "require": {
-                 "php": ">=5.3.1",
--                "symfony/process": "~2.1"
-+                "symfony/process": "~2.1|~3.0"
-             },
-             "conflict": {
--                "twig/twig": "<1.12"
-+                "twig/twig": "<1.23"
-             },
-             "require-dev": {
--                "cssmin/cssmin": "*",
--                "joliclic/javascript-packer": "*",
--                "kamicane/packager": "*",
-+                "cssmin/cssmin": "3.0.1",
-+                "joliclic/javascript-packer": "1.1",
-+                "kamicane/packager": "1.0",
-                 "leafo/lessphp": "^0.3.7",
--                "leafo/scssphp": "*@dev",
--                "leafo/scssphp-compass": "*@dev",
--                "mrclay/minify": "*",
-+                "leafo/scssphp": "~0.1",
-+                "mrclay/minify": "~2.2",
-                 "patchwork/jsqueeze": "~1.0|~2.0",
-                 "phpunit/phpunit": "~4.8",
-                 "psr/log": "~1.0",
--                "ptachoire/cssembed": "*",
--                "symfony/phpunit-bridge": "~2.7",
-+                "ptachoire/cssembed": "~1.0",
-+                "symfony/phpunit-bridge": "~2.7|~3.0",
-                 "twig/twig": "~1.8|~2.0"
-             },
-             "suggest": {
-@@ -1256,7 +1255,7 @@
-                 "compression",
-                 "minification"
-             ],
--            "time": "2015-10-15 01:33:42"
-+            "time": "2015-11-12 13:51:40"
-         },
-         {
-             "name": "leafo/scssphp",
-@@ -1733,25 +1732,25 @@
+@@ -1735,25 +1735,25 @@
          },
          {
              "name": "symfony/assetic-bundle",
@@ -147,7 +90,7 @@ index f033f90..a41e170 100644
              },
              "conflict": {
                  "kriswallsmith/spork": "<=0.2",
-@@ -1760,11 +1759,11 @@
+@@ -1762,11 +1762,11 @@
              "require-dev": {
                  "kriswallsmith/spork": "~0.3",
                  "patchwork/jsqueeze": "~1.0",
@@ -164,7 +107,7 @@ index f033f90..a41e170 100644
              },
              "suggest": {
                  "kriswallsmith/spork": "to be able to dump assets in parallel",
-@@ -1799,33 +1798,33 @@
+@@ -1801,33 +1801,33 @@
                  "compression",
                  "minification"
              ],
@@ -209,7 +152,7 @@ index f033f90..a41e170 100644
              },
              "type": "symfony-bundle",
              "extra": {
-@@ -1858,7 +1857,7 @@
+@@ -1860,7 +1860,7 @@
                  "log",
                  "logging"
              ],
@@ -218,13 +161,3 @@ index f033f90..a41e170 100644
          },
          {
              "name": "symfony/polyfill-intl-icu",
-@@ -2677,8 +2676,5 @@
-         "php": ">=5.3.9",
-         "ext-pdo_sqlite": "*"
-     },
--    "platform-dev": [],
--    "platform-overrides": {
--        "php": "5.3.9"
--    }
-+    "platform-dev": []
- }

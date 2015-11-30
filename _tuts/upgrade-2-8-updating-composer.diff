@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 995325f..bba3ec8 100644
+index 995325f..7276223 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -24,7 +24,7 @@
@@ -7,12 +7,12 @@ index 995325f..bba3ec8 100644
          "symfony/monolog-bundle"               : "~2.7",
          "symfony/swiftmailer-bundle"           : "~2.3",
 -        "symfony/symfony"                      : "~2.7",
-+        "symfony/symfony"                      : "2.8.*@BETA",
++        "symfony/symfony"                      : "2.8.*@DEV",
          "twig/extensions"                      : "~1.2"
      },
      "require-dev": {
 diff --git a/composer.lock b/composer.lock
-index a2d119a..f033f90 100644
+index a2d119a..f206749 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,8 +4,8 @@
@@ -21,8 +21,8 @@ index a2d119a..f033f90 100644
      ],
 -    "hash": "3f337c43cac919fc97cdfa0c0185eca2",
 -    "content-hash": "f1fbaf6bf9575dc8361bf4fe113506b4",
-+    "hash": "bdb1978e0957ff0bc64bb4314764084c",
-+    "content-hash": "e23c13e43ddccdf38218d983fccffad0",
++    "hash": "4aec869a6b501085f55096913213b7cc",
++    "content-hash": "7dd99378871c03e17d39e2da0761c002",
      "packages": [
          {
              "name": "doctrine/annotations",
@@ -67,7 +67,93 @@ index a2d119a..f033f90 100644
          },
          {
              "name": "doctrine/collections",
-@@ -633,16 +633,16 @@
+@@ -492,48 +492,51 @@
+         },
+         {
+             "name": "doctrine/doctrine-cache-bundle",
+-            "version": "v1.0.1",
+-            "target-dir": "Doctrine/Bundle/DoctrineCacheBundle",
++            "version": "1.2.2",
+             "source": {
+                 "type": "git",
+                 "url": "https://github.com/doctrine/DoctrineCacheBundle.git",
+-                "reference": "e4b6f810aa047f9cbfe41c3d6a3d7e83d7477a9d"
++                "reference": "030ff41ef1db66370b36467086bfb817a661fe6a"
+             },
+             "dist": {
+                 "type": "zip",
+-                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/e4b6f810aa047f9cbfe41c3d6a3d7e83d7477a9d",
+-                "reference": "e4b6f810aa047f9cbfe41c3d6a3d7e83d7477a9d",
++                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/030ff41ef1db66370b36467086bfb817a661fe6a",
++                "reference": "030ff41ef1db66370b36467086bfb817a661fe6a",
+                 "shasum": ""
+             },
+             "require": {
+-                "doctrine/cache": "~1.3",
++                "doctrine/cache": "^1.4.2",
+                 "doctrine/inflector": "~1.0",
+                 "php": ">=5.3.2",
+-                "symfony/doctrine-bridge": "~2.2",
+-                "symfony/framework-bundle": "~2.2",
+-                "symfony/security": "~2.2"
++                "symfony/doctrine-bridge": "~2.2|~3.0"
+             },
+             "require-dev": {
+                 "instaclick/coding-standard": "~1.1",
+                 "instaclick/object-calisthenics-sniffs": "dev-master",
+                 "instaclick/symfony2-coding-standard": "dev-remaster",
+-                "phpunit/phpunit": "~3.7",
++                "phpunit/phpunit": "~4",
+                 "satooshi/php-coveralls": "~0.6.1",
+-                "squizlabs/php_codesniffer": "dev-master",
+-                "symfony/console": "~2.2",
+-                "symfony/finder": "~2.2",
+-                "symfony/validator": "~2.2",
+-                "symfony/yaml": "~2.2"
++                "squizlabs/php_codesniffer": "~1.5",
++                "symfony/console": "~2.2|~3.0",
++                "symfony/finder": "~2.2|~3.0",
++                "symfony/framework-bundle": "~2.2|~3.0",
++                "symfony/phpunit-bridge": "~2.7|~3.0",
++                "symfony/security-acl": "~2.3|~3.0",
++                "symfony/validator": "~2.2|~3.0",
++                "symfony/yaml": "~2.2|~3.0"
++            },
++            "suggest": {
++                "symfony/security-acl": "For using this bundle to cache ACLs"
+             },
+             "type": "symfony-bundle",
+             "extra": {
+                 "branch-alias": {
+-                    "dev-master": "1.0.x-dev"
++                    "dev-master": "1.2.x-dev"
+                 }
+             },
+             "autoload": {
+-                "psr-0": {
+-                    "Doctrine\\Bundle\\DoctrineCacheBundle": ""
++                "psr-4": {
++                    "Doctrine\\Bundle\\DoctrineCacheBundle\\": ""
+                 }
+             },
+             "notification-url": "https://packagist.org/downloads/",
+@@ -566,13 +569,13 @@
+                     "email": "fabien@symfony.com"
+                 }
+             ],
+-            "description": "Symfony2 Bundle for Doctrine Cache",
++            "description": "Symfony Bundle for Doctrine Cache",
+             "homepage": "http://www.doctrine-project.org",
+             "keywords": [
+                 "cache",
+                 "caching"
+             ],
+-            "time": "2014-11-28 09:43:36"
++            "time": "2015-11-27 04:59:07"
+         },
+         {
+             "name": "doctrine/doctrine-fixtures-bundle",
+@@ -633,16 +636,16 @@
          },
          {
              "name": "doctrine/inflector",
@@ -88,7 +174,7 @@ index a2d119a..f033f90 100644
                  "shasum": ""
              },
              "require": {
-@@ -654,7 +654,7 @@
+@@ -654,7 +657,7 @@
              "type": "library",
              "extra": {
                  "branch-alias": {
@@ -97,7 +183,7 @@ index a2d119a..f033f90 100644
                  }
              },
              "autoload": {
-@@ -696,7 +696,7 @@
+@@ -696,7 +699,7 @@
                  "singularize",
                  "string"
              ],
@@ -106,7 +192,68 @@ index a2d119a..f033f90 100644
          },
          {
              "name": "doctrine/lexer",
-@@ -1392,6 +1392,54 @@
+@@ -1182,38 +1185,37 @@
+         },
+         {
+             "name": "kriswallsmith/assetic",
+-            "version": "v1.3.1",
++            "version": "v1.3.2",
+             "source": {
+                 "type": "git",
+                 "url": "https://github.com/kriswallsmith/assetic.git",
+-                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
++                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5"
+             },
+             "dist": {
+                 "type": "zip",
+-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
+-                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
++                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/9928f7c4ad98b234e3559d1049abd13387f86db5",
++                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5",
+                 "shasum": ""
+             },
+             "require": {
+                 "php": ">=5.3.1",
+-                "symfony/process": "~2.1"
++                "symfony/process": "~2.1|~3.0"
+             },
+             "conflict": {
+-                "twig/twig": "<1.12"
++                "twig/twig": "<1.23"
+             },
+             "require-dev": {
+-                "cssmin/cssmin": "*",
+-                "joliclic/javascript-packer": "*",
+-                "kamicane/packager": "*",
++                "cssmin/cssmin": "3.0.1",
++                "joliclic/javascript-packer": "1.1",
++                "kamicane/packager": "1.0",
+                 "leafo/lessphp": "^0.3.7",
+-                "leafo/scssphp": "*@dev",
+-                "leafo/scssphp-compass": "*@dev",
+-                "mrclay/minify": "*",
++                "leafo/scssphp": "~0.1",
++                "mrclay/minify": "~2.2",
+                 "patchwork/jsqueeze": "~1.0|~2.0",
+                 "phpunit/phpunit": "~4.8",
+                 "psr/log": "~1.0",
+-                "ptachoire/cssembed": "*",
+-                "symfony/phpunit-bridge": "~2.7",
++                "ptachoire/cssembed": "~1.0",
++                "symfony/phpunit-bridge": "~2.7|~3.0",
+                 "twig/twig": "~1.8|~2.0"
+             },
+             "suggest": {
+@@ -1256,7 +1258,7 @@
+                 "compression",
+                 "minification"
+             ],
+-            "time": "2015-10-15 01:33:42"
++            "time": "2015-11-12 13:51:40"
+         },
+         {
+             "name": "leafo/scssphp",
+@@ -1392,6 +1394,54 @@
              "time": "2015-10-14 12:51:02"
          },
          {
@@ -161,7 +308,42 @@ index a2d119a..f033f90 100644
              "name": "patchwork/jsqueeze",
              "version": "v1.0.7",
              "source": {
-@@ -1813,6 +1861,458 @@
+@@ -1588,20 +1638,20 @@
+         },
+         {
+             "name": "sensiolabs/security-checker",
+-            "version": "v3.0.1",
++            "version": "v3.0.2",
+             "source": {
+                 "type": "git",
+                 "url": "https://github.com/sensiolabs/security-checker.git",
+-                "reference": "7735fd97ff7303d9df776b8dbc970f949399abc9"
++                "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93"
+             },
+             "dist": {
+                 "type": "zip",
+-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/7735fd97ff7303d9df776b8dbc970f949399abc9",
+-                "reference": "7735fd97ff7303d9df776b8dbc970f949399abc9",
++                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/21696b0daa731064c23cfb694c60a2584a7b6e93",
++                "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93",
+                 "shasum": ""
+             },
+             "require": {
+-                "symfony/console": "~2.0"
++                "symfony/console": "~2.0|~3.0"
+             },
+             "bin": [
+                 "security-checker"
+@@ -1628,7 +1678,7 @@
+                 }
+             ],
+             "description": "A security checker for your composer.lock",
+-            "time": "2015-08-11 12:11:25"
++            "time": "2015-11-07 08:07:40"
+         },
+         {
+             "name": "swiftmailer/swiftmailer",
+@@ -1813,6 +1863,458 @@
              "time": "2015-10-02 11:51:59"
          },
          {
@@ -620,24 +802,24 @@ index a2d119a..f033f90 100644
              "name": "symfony/swiftmailer-bundle",
              "version": "v2.3.8",
              "source": {
-@@ -1871,23 +2371,34 @@
+@@ -1871,23 +2373,34 @@
          },
          {
              "name": "symfony/symfony",
 -            "version": "v2.7.6",
-+            "version": "v2.8.0-BETA1",
++            "version": "2.8.x-dev",
              "source": {
                  "type": "git",
                  "url": "https://github.com/symfony/symfony.git",
 -                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42"
-+                "reference": "3b99b3a6e71da0f7d3fb07cf5c728ad04a326416"
++                "reference": "5615b92cd452cd54f1433a3f53de87c096a1107f"
              },
              "dist": {
                  "type": "zip",
 -                "url": "https://api.github.com/repos/symfony/symfony/zipball/66b2e9662c44d478b69e48278aa54079a006eb42",
 -                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42",
-+                "url": "https://api.github.com/repos/symfony/symfony/zipball/3b99b3a6e71da0f7d3fb07cf5c728ad04a326416",
-+                "reference": "3b99b3a6e71da0f7d3fb07cf5c728ad04a326416",
++                "url": "https://api.github.com/repos/symfony/symfony/zipball/5615b92cd452cd54f1433a3f53de87c096a1107f",
++                "reference": "5615b92cd452cd54f1433a3f53de87c096a1107f",
                  "shasum": ""
              },
              "require": {
@@ -660,7 +842,7 @@ index a2d119a..f033f90 100644
              },
              "replace": {
                  "symfony/asset": "self.version",
-@@ -1910,18 +2421,20 @@
+@@ -1910,18 +2423,20 @@
                  "symfony/http-foundation": "self.version",
                  "symfony/http-kernel": "self.version",
                  "symfony/intl": "self.version",
@@ -682,7 +864,7 @@ index a2d119a..f033f90 100644
                  "symfony/security-http": "self.version",
                  "symfony/serializer": "self.version",
                  "symfony/stopwatch": "self.version",
-@@ -1941,14 +2454,14 @@
+@@ -1941,14 +2456,14 @@
                  "doctrine/doctrine-bundle": "~1.2",
                  "doctrine/orm": "~2.4,>=2.4.5",
                  "egulias/email-validator": "~1.2",
@@ -700,7 +882,7 @@ index a2d119a..f033f90 100644
                  }
              },
              "autoload": {
-@@ -1962,11 +2475,10 @@
+@@ -1962,11 +2477,10 @@
                      "Symfony\\Component\\": "src/Symfony/Component/"
                  },
                  "classmap": [
@@ -714,16 +896,16 @@ index a2d119a..f033f90 100644
                  ]
              },
              "notification-url": "https://packagist.org/downloads/",
-@@ -1988,7 +2500,7 @@
+@@ -1988,7 +2502,7 @@
              "keywords": [
                  "framework"
              ],
 -            "time": "2015-10-27 19:07:24"
-+            "time": "2015-11-16 09:09:38"
++            "time": "2015-11-30 17:26:10"
          },
          {
              "name": "twig/extensions",
-@@ -2044,16 +2556,16 @@
+@@ -2044,16 +2558,16 @@
          },
          {
              "name": "twig/twig",
@@ -744,7 +926,7 @@ index a2d119a..f033f90 100644
                  "shasum": ""
              },
              "require": {
-@@ -2066,7 +2578,7 @@
+@@ -2066,7 +2580,7 @@
              "type": "library",
              "extra": {
                  "branch-alias": {
@@ -753,7 +935,7 @@ index a2d119a..f033f90 100644
                  }
              },
              "autoload": {
-@@ -2101,7 +2613,7 @@
+@@ -2101,7 +2615,7 @@
              "keywords": [
                  "templating"
              ],
@@ -762,14 +944,23 @@ index a2d119a..f033f90 100644
          }
      ],
      "packages-dev": [
-@@ -2156,7 +2668,9 @@
+@@ -2156,15 +2670,14 @@
      ],
      "aliases": [],
      "minimum-stability": "stable",
 -    "stability-flags": [],
 +    "stability-flags": {
-+        "symfony/symfony": 10
++        "symfony/symfony": 20
 +    },
      "prefer-stable": false,
      "prefer-lowest": false,
      "platform": {
+         "php": ">=5.3.9",
+         "ext-pdo_sqlite": "*"
+     },
+-    "platform-dev": [],
+-    "platform-overrides": {
+-        "php": "5.3.9"
+-    }
++    "platform-dev": []
+ }

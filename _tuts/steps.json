@@ -76,6 +76,11 @@
             "description": null
         },
         {
+            "id": "deprecations-updating-csrf",
+            "name": "Deprecations: Updating csrf",
+            "description": null
+        },
+        {
             "id": "upgrade-change-composer-json-to-3-0",
             "name": "Upgrade: change composer.json to 3.0",
             "description": null
@@ -86,5 +91,5 @@
             "description": null
         }
     ],
-    "sha": "5ef3fa1bf7c0b5108c8668711ecfd90a4c742154"
+    "sha": "ceb4710efba49f72c9eca2ab2169e2cd7415ed53"
 }

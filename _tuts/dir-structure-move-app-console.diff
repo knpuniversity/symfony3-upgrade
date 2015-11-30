@@ -63,7 +63,7 @@ index 0000000..acd7ea0
 +$application = new Application($kernel);
 +$application->run($input);
 diff --git a/composer.json b/composer.json
-index 43f9e60..26ce804 100644
+index 46edb1d..5d533c6 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -49,9 +49,6 @@
