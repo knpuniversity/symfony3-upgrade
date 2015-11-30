@@ -25,7 +25,7 @@ when you want to.
 Since we're just upgrading from Symfony 2.7 to 2.8, there *shouldn't* be any backwards
 compatibility breaks... though one usually sneaks in... usually with forms. While
 Composer is dialing out to Jordi, switch to the browser, and head to
-[http://github.com/symfony/symfony**](http://github.com/symfony/symfony) to check
+[http://github.com/symfony/symfony](http://github.com/symfony/symfony) to check
 out the upgrade log for 2.8 to see what *has* changed. 
 
 This describes things that were deprecated. Translation: these are things you'll need

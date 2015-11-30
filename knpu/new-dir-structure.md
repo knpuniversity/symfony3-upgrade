@@ -16,7 +16,7 @@ Great question: they're 3.1415926535. They also ask me:
 > What do I need to change in my code after upgrading?
 
 The answer to that is... nothing! Ya know, because Symfony doesn't break backwards
-compatability.
+compatibility.
 
 But we *do* sometimes tweak things in the default directory structure of Symfony.
 A sure-fire way to find out about those changes is to go to the Symfony Standard
@@ -105,7 +105,7 @@ Who put this in the `app` directory to begin with? It was Santa! Just kidding: i
 the SensioDistributionBundle, via one of these post install hooks in `composer.json`.
 
 We need to tell the SensioDistributionBundle that we want it to be built in `var`
-instead of `app`. To do that, add a couple of extra configuration lines in the `extra`
+instead of `app`. To do that, add a couple of new configuration lines in the `extra`
 section of `composer.json`.
 
 Add `"symfony-var-dir":` set to `"var"`, `"symfony-bin-dir":` set to `"bin"` and
@@ -159,7 +159,7 @@ And it *still* works. I can't seem to break our app.
 We're now down to the last change: it involves the `tests` directory. Wait, you
 don't write tests? You are a brave, brave developer.
 
-For the rest of you law-abiding citiczens. the tests *used* to live inside of the
+For the rest of you law-abiding citizens. the tests *used* to live inside of the
 bundles themselves. These have now been moved down into a new root directory called,
 well, `tests`! Move the `AppBundle/Tests` directory into `tests`. Once it's there,
 rename it to `AppBundle` so that you have a nice `tests/AppBundle`.
@@ -179,8 +179,8 @@ We're good!
 
 ## Moving phpunit.xml.dist
 
-On the topif of tests, the `phpunit.xml.dist` file *normally* lives in the `app/`
-directory. That's why you run `phpunit- c app`.
+On the topic of tests, the `phpunit.xml.dist` file *normally* lives in the `app/`
+directory. That's why you run `phpunit -c app`.
 
 To simplify things, that has been moved to the root of the project:
 
@@ -189,21 +189,21 @@ mv app/phpunit.xml.dist .
 ```
 
 After moving it, we need to update a few things. Update `bootstrap` to `app/autoload.php`.
-In the section `testsuites` section, this is how phpunit know *where* tests live.
+In the `testsuites` section, this is how phpunit know *where* tests live.
 This can now simply be changed to `tests`... which is pretty cool.
 
-Finally, uncomment out the `php` block here and tell Symfony where your app directory
+Finally, uncomment out the `php` block and tell Symfony where your app directory
 is by changing the `KERNEL_DIR` value to `app/`. This is for functional tests: when
 Symfony tries to boot your kernel, it needs to know... where you kernel lives!
 
-Get back to the terminal. But don't run `phpunit -c app`, that's *old* new. Just
+Get back to the terminal. But don't run `phpunit -c app`, that's *old* news. Just
 run:
 
 ```bash
 phpunit
 ```
 
-And hye, our tests are even passing! 
+And hey, our tests are even passing! 
 
 ## Changes to .gitignore
 
@@ -240,6 +240,6 @@ this in 2.8 but in 3.0 you have to turn that on explicitly. This is actually pre
 cool: instead of the framework bundle turning on a lot of features automatically,
 you get to opt into the features you want available. 
 
-Okay that is it! Enjoy your brand new fancy directory structure. I really it because
-the `var` directory is stuff I don't need to touch, the `app` directory is just
-configuration and the `tests/` are all together for the holidays.
+Okay that is it! Enjoy your brand new fancy directory structure. I really like it
+because the `var` directory is stuff I don't need to touch, the `app` directory is
+just configuration and the `tests/` are all together for the holidays.
