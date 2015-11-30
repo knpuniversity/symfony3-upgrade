@@ -23,10 +23,10 @@ chapters:
     upgrade-2.8:
         is_finished: false
         video_key: ~
-    fix-deprecations:
+    new-dir-structure:
         is_finished: false
         video_key: ~
-    new-dir-structure:
+    fix-deprecations:
         is_finished: false
         video_key: ~
     upgrade-3.0:
