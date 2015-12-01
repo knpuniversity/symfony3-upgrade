@@ -99,7 +99,7 @@ rm -rf var/cache/*
 
 And boom! The only deprecation left *is* coming from our code, but I'm going to ignore
 it because fixing it isn't very interesting. Refresh one more time to simulate using
-the cached files. We can still see the *other* problem we still have because
+the cached files. We can still see the *other* problem we have because
 AsseticBundle isn't yet compatible with 3.0.
 
 In real life, this *will* block us from continuing to Symfony 3.0. Outside bundles
