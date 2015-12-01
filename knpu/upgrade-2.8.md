@@ -3,7 +3,7 @@
 **Confused by the First Paragraph? https://www.youtube.com/watch?v=K7zNY0I5JNI**
 
 The Symfony Demo: example app: a project barely alive... on Symfony 2.7.
-Ladies and gentleman, we can rebuild it, we have the technology. We have
+Ladies and gentlemen, we can rebuild it, we have the technology. We have
 the capability to make the world's first Symfony 3 app. Better than it was
 before, stronger, faster, the 3.0 version demo app. This series is all about
 upgrading to Symfony 3. 
