@@ -931,7 +931,7 @@ index 5d533c6..4e8c179 100644
              "file": "app/config/parameters.yml"
          }
 diff --git a/web/app.php b/web/app.php
-index 5101ab8..4f987c3 100644
+index 5101ab8..f97e07b 100644
 --- a/web/app.php
 +++ b/web/app.php
 @@ -9,7 +9,8 @@
@@ -939,13 +939,13 @@ index 5101ab8..4f987c3 100644
  use Symfony\Component\HttpFoundation\Request;
  
 -$loader = require_once __DIR__.'/../app/bootstrap.php.cache';
-+$loader = require_once __DIR__.'/../app/autoload.php';
++$loader = require __DIR__.'/../app/autoload.php';
 +include_once __DIR__.'/../var/bootstrap.php.cache';
  
  // If your web server provides APC support for PHP applications, uncomment these
  // lines to use APC for class autoloading. This can improve application performance
 diff --git a/web/app_dev.php b/web/app_dev.php
-index 698c1d1..82257c1 100644
+index 698c1d1..e2b611d 100644
 --- a/web/app_dev.php
 +++ b/web/app_dev.php
 @@ -25,7 +25,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
@@ -953,7 +953,7 @@ index 698c1d1..82257c1 100644
  }
  
 -$loader = require_once __DIR__.'/../app/bootstrap.php.cache';
-+$loader = require_once __DIR__.'/../app/autoload.php';
++$loader = require __DIR__.'/../app/autoload.php';
  Debug::enable();
  
  $kernel = new AppKernel('dev', true);

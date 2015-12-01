@@ -32,7 +32,7 @@ index b405752..0000000
 -$application->run($input);
 diff --git a/bin/console b/bin/console
 new file mode 100755
-index 0000000..acd7ea0
+index 0000000..d0b3948
 --- /dev/null
 +++ b/bin/console
 @@ -0,0 +1,26 @@
@@ -45,7 +45,7 @@ index 0000000..acd7ea0
 +
 +set_time_limit(0);
 +
-+require_once __DIR__.'/../app/autoload.php';
++require __DIR__.'/../app/autoload.php';
 +
 +use Symfony\Bundle\FrameworkBundle\Console\Application;
 +use Symfony\Component\Console\Input\ArgvInput;
