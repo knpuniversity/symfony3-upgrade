@@ -11,18 +11,28 @@ to the form system are some of the biggest, navigate to a page with a form. Woh,
 > not match the actual name.
 
 Because the way we name forms has changed, I know this has *something* to do with
-that. The stack trace points me to BlogController line 149:
+that. The stack trace points me to `BlogController` line 149:
+
+[[[ code('6238cecd39') ]]]
 
 And that line points us to `PostType`. A-ha! The `publishedAt` field type is still
-`app_datetimepicker`: the upgrade fixer did *not* fix this one, because it's custom.
-Change this to DateTimePickerType::class. Then go back, hit option+enter, and click
-"Import class" to add the `use` statement.
+`app_datetimepicker`:
+
+[[[ code('eb0f102293') ]]]
+
+The upgrade fixer did *not* fix this one, because it's custom. Change this to
+`DateTimePickerType::class`. Then go back, hit option+enter, and click "Import class"
+to add the `use` statement:
+
+[[[ code('777247e40b') ]]]
 
 While we're here, `BlogController` has a problem too. Instead of saying `new PostType()`,
-you need to say `PostType::class`.
+you need to say `PostType::class`:
+
+[[[ code('e08505a0f7') ]]]
 
 Refresh! It works! Open the deprecation notices. There are still 3: one for the problematic
-AsseticBundle, one for unquoted '@' symbols and another because the global `_self`
+AsseticBundle, one for unquoted `@` symbols and another because the global `_self`
 variable in Twig was deprecated. The `_self` usage comes from the Symfony Demo itself:
 it's used in the "Show Code" functionality. Since that's specific to the Symfony
 Demo, I'll ignore that one.
@@ -33,10 +43,14 @@ So let's keep going. Open up `app/config/services.yml`. Starting in 2.8, you nee
 to surround any string that starts with `@` with quotes. It turns out that `@` is
 a special character, so it *always* should have been illegal to have unquotes `@`
 symbols, but the YAML parser worked anyways. Surround `@markdown` with single quotes.
-Do the same around `@router`.
+Do the same around `@router`:
+
+[[[ code('2df46551b7') ]]]
 
 And while you're here, remove the `alias` from the `form.type` tag: that's not needed
-in 3.0 anymore.
+in 3.0 anymore:
+
+[[[ code('') ]]]
 
 Let's see what that did. Go back and clear the cache:
 

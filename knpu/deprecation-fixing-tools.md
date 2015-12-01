@@ -31,8 +31,14 @@ symfony-upgrade-fixer fix .
 ```
 
 Behind the scenes, that's snooping through your project and writing new code for you.
-Ding! It fixed two form classes. By using `git diff`, I can see that it updated
-to the new [TextareaType::class](https://knpuniversity.com/screencast/new-in-symfony3/form-updates)
+Ding! It fixed two form classes:
+
+[[[ code('5d32ce898b') ]]]
+
+[[[ code('bd25ded46f') ]]]
+
+By using `git diff`, I can see that it updated to the new
+[TextareaType::class](https://knpuniversity.com/screencast/new-in-symfony3/form-updates)
 format. If you have a lot of forms, this is *awesome*.
 
 ## Symfony Deprecation Detector

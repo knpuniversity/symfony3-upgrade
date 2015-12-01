@@ -22,6 +22,7 @@ tuts_hero:
 chapters:
     upgrade-2.8:
         is_finished: true
+        is_free: true
         video_key: ~
     new-dir-structure:
         is_finished: true

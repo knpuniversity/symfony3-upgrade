@@ -39,7 +39,7 @@ But look at the third warning:
 Look closely at the `LoggerChannelPass`: that's coming from MonologBundle. That's
 the first outside bundle that needs to be updated.
 
-Below that, the "knp_pagination" Twig extension problem is obviously coming from
+Below that, the `knp_pagination` Twig extension problem is obviously coming from
 KnpPaginatorBundle.
 
 But before you upgrade those, go back and refresh again. This time the page pulls
