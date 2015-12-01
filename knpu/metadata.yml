@@ -21,19 +21,15 @@ tuts_hero:
 
 chapters:
     upgrade-2.8:
-        is_finished: true
+        is_free:     true
         video_key: 147413926
     new-dir-structure:
-        is_finished: true
-        video_key: ~
+        video_key: 147421746
     fix-deprecations-in-bundles:
-        is_finished: true
         video_key: ~
     deprecation-fixing-tools:
-        is_finished: true
         video_key: ~
     fix-my-deprecations:
-        is_finished: true
         video_key: ~
     upgrade-3.0:
         is_finished: false
