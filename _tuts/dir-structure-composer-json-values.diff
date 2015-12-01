@@ -939,7 +939,7 @@ index 5101ab8..4f987c3 100644
  use Symfony\Component\HttpFoundation\Request;
  
 -$loader = require_once __DIR__.'/../app/bootstrap.php.cache';
-+$loader = require_once __DIR__.'/../app/autoload.php';
++$loader = require __DIR__.'/../app/autoload.php';
 +include_once __DIR__.'/../var/bootstrap.php.cache';
  
  // If your web server provides APC support for PHP applications, uncomment these
@@ -953,7 +953,7 @@ index 698c1d1..82257c1 100644
  }
  
 -$loader = require_once __DIR__.'/../app/bootstrap.php.cache';
-+$loader = require_once __DIR__.'/../app/autoload.php';
++$loader = require __DIR__.'/../app/autoload.php';
  Debug::enable();
  
  $kernel = new AppKernel('dev', true);
