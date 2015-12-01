@@ -50,7 +50,7 @@ Do the same around `@router`:
 And while you're here, remove the `alias` from the `form.type` tag: that's not needed
 in 3.0 anymore:
 
-[[[ code('') ]]]
+[[[ code('034921cfb0') ]]]
 
 Let's see what that did. Go back and clear the cache:
 
@@ -61,11 +61,16 @@ rm -rf var/cache/*
 Now refresh! Now we're down to *4* deprecations, and two are *still* coming from
 unquoted YAML files. Hmm. Look at the stack trace. It's not easy to figure out *where*
 this problem is coming from. But look: `CodeExplorerExtension::load()`: that class
-lives in *our* code: inside the `CodeExplorerBundle`. Open that class.
+lives in *our* code: inside the `CodeExplorerBundle`. Open that class:
+
+[[[ code('9adf6cb449') ]]]
 
 Inside, we load a `services.yml` file. Ah, I bet there's an `@` symbol inside! There
-it is: wrap that string in single quotes. Let's do it again: clear the cache and
-refresh:
+it is: wrap that string in single quotes:
+
+[[[ code('c00d26f75c') ]]]
+
+Let's do it again: clear the cache and refresh:
 
 ```bash
 rm -rf var/cache/*
@@ -74,13 +79,17 @@ rm -rf var/cache/*
 But there's still *one* unwrapped `@` symbol. Look *really* closely. This time, you
 can see that the trace starts with a `Router::getRouteCollection()` followed by a
 `YamlFileLoader`. This makes me think that this is coming from a `routing.yml` file.
-Open the main one. Of course: put quotes around the `@AppBundle` string.
+Open the main one. Of course! Put quotes around the `@AppBundle` string:
+
+[[[ code('f4251fc098') ]]]
 
 ## Configuration Tweaks
 
 Before you refresh, fix one more: the csrf notice. In this case, a config key was
 renamed from `csrf_provider` to `csrf_token_generator` in `security.yml`. A lot of
 changes are like this: simple, renames:
+
+[[[ code('') ]]]
 
 Clear the cache and refresh:
 
