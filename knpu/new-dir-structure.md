@@ -191,6 +191,11 @@ going to include `bootstrap.php.cache`. Instead require `app/autoload.php`:
 
 [[[ code('bebf25f79c') ]]]
 
+***TIP
+Actually, the `require_once` was also changed to `require`, which guarantees that
+the `$loader` is returned.
+***
+
 Why? Well, the *whole* point of `bootstrap.php.cache` is performance: by having a
 bunch of classes in one file, it means that the autoloading mechanism has to work
 less. But when you're debugging, it's not helpful to see errors coming from a deep
