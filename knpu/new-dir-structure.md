@@ -1,9 +1,5 @@
 # Upgrading to the Symfony 3.0 Directory Structure
 
-***TIP
-The video for this tutorial will be ready **very** soon!
-***
-
 Hey, we're on Symfony 2.8! Before we *fully* upgrade, let's move into the new 3.0
 directory structure... which you can actually use with any version of Symfony...
 But in 3.0, it's super official. And remember: the new structure isn't required.
