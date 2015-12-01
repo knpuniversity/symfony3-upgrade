@@ -5,31 +5,32 @@ The video for this tutorial will be ready **very** soon!
 ***
 
 Once you're on 2.8, there's a new game: find and fix deprecation notices. But there's
-a catch! Some deprecated code paths are hit at runtime, but others are only executed
-when the cache is being built. Start by clearing the cache:
+a catch! You won't hit *all* of your code paths at runtime. Some code path are only
+executed when the cache is being built. To hit those, start by clearing the cache:
 
 ```bash
 rm -rf var/cache/*
 ```
 
-Then refresh the page and click into the deprecated calls on the Web Debug Toolbar.
+Refresh the page and click into the deprecated calls on the Web Debug Toolbar.
 
 ## Deprecations come from Outside Bundles
 
-Here's the trickiest thing about deprecation notices: many of them are *not your fault*.
-Yep, many notices come from all of those lazy third-party bundles you're using in
-your code. So to start, let's what outside bundles are causing problems.
+Ok, here's the *really* tricky thing about deprecation notices: many of them are
+*not your fault*. Yep, a lot of notices come from all of those lazy third-party bundles
+you're using in your project. So to start, let's find out what outside bundles are
+causing problems... before we worry about fixing our stuff.
 
 The first deprecation - about not quoting `@` symbols in YAML is *our* fault.
 
 > Not quoting a scalar starting with '@' is deprecated since Symfony 2.8
 
-But it's not easy to see: you need to study the stacktrace. This ultimately starts
-with `AppKernel::registerContainerConfiguration()` where our configuration files are
+But it's not easy to see: you need to study the stack trace. This ultimately starts
+with `AppKernel::registerContainerConfiguration()` where *our* configuration files are
 loaded.
 
 The second is complaining about bad configuration in `security.yml`: that's *also*
-our fault, and we'll fix it in a second.
+our fault, and we'll fix it in a minute.
 
 But look at the third warning:
 
@@ -43,8 +44,8 @@ Below that, the `knp_pagination` Twig extension problem is obviously coming from
 KnpPaginatorBundle.
 
 But before you upgrade those, go back and refresh again. This time the page pulls
-from the cache, and that can sometimes cause slightly different deprecation notices.
-A-ha!
+from the cache, and that can sometimes cause different deprecation notices to show
+up. A-ha!
 
 > The class "Symfony\Bundle\AsseticBundle\Config\AsseticResource" is performing
 > resource checking through ResourceInterface::isFresh(), which is deprecated
@@ -62,23 +63,23 @@ Update these by running `composer update` followed by their names. Copy them fro
 composer update knplabs/knp-paginator-bundle symfony/assetic-bundle symfony/monolog-bundle --with-dependencies
 ```
 
-Notice I'm *not* tweaking versions in `composer.json`. Maybe I *will* need to do
-this, but I'll take the *laz* route first and hope that upgrading these to the newest
-version allowed by these existing constraints will be enough.
+Notice I'm *not* tweaking their version constraints in `composer.json`. Maybe I *will*
+need to do this, but I'll take the lazy route first and hope that upgrading these
+to the newest version allowed by their existing constraints will be enough.
 
 Let's see what happens!
 
-Cool! We downloaded some patch version updates, which *may* have solved our problem...
+Cool! This downloaded some patch version updates, which *may* have solved our problem...
 or maybe it didn't. Clear the cache and go refresh:
 
 ```bash
 rm -rf var/cache/*
 ```
 
-Click into the deprecations. Now the deprecation notices are down to 5 and these
-are coming from *our* code. Problem solved! But wait, refresh again. Huh, now there
-are 32 notices: the ones from AsseticBundle are back! The new version of AsseticBundle
-did *not* fix that problem.
+Click into the deprecations. Now the notices are down to 5 and they're coming from
+*our* code. Problem solved! But wait, refresh again. Huh, now there are 32 notices:
+the ones from AsseticBundle are back! The new version of AsseticBundle did *not*
+fix that problem.
 
 ## The Bundle isn't Symfony 3 Ready!?
 
