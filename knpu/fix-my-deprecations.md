@@ -89,7 +89,7 @@ Before you refresh, fix one more: the csrf notice. In this case, a config key wa
 renamed from `csrf_provider` to `csrf_token_generator` in `security.yml`. A lot of
 changes are like this: simple, renames:
 
-[[[ code('') ]]]
+[[[ code('eaef57fb8f') ]]]
 
 Clear the cache and refresh:
 
