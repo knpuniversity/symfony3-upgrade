@@ -128,7 +128,7 @@ This is one of the biggest changes. Goodbye `app/console`, hello `bin/console`.
 Of course this file is angry because the `bootstrap.php.cache` file is not in the same
 directory anymore. But instead of loading it, load `/../app/autoload.php` instead:
 
-[[[ code('7bad0be324') ]]]
+[[[ code('0541935a21') ]]]
 
 Why? Well, in part because `bootstrap.php.cache` is going to move too.
 
@@ -189,7 +189,7 @@ one in `app`. To un-break our application, we need to go into `app_dev.php` and 
 the new path to the bootstrap file. But stop! Like the `console` file, we're no longer
 going to include `bootstrap.php.cache`. Instead require `app/autoload.php`:
 
-[[[ code('bebf25f79c') ]]]
+[[[ code('7c244992e6') ]]]
 
 ***TIP
 Actually, the `require_once` was also changed to `require`, which guarantees that
@@ -205,7 +205,7 @@ Instead, in the `dev` environment, only include the normal autoloader. In `app.p
 do the same thing. But since performance is totally rad to have in the `prod` environment,
 add an `include_once` below that for `/../var/bootstrap.php.cache`:
 
-[[[ code('905387dbe3') ]]]
+[[[ code('3d0d60b75f') ]]]
 
 Let's give that a try in the browser. 
 
