@@ -12,7 +12,7 @@ index 883ec6d..088705d 100644
      prefix:   /{_locale}
      requirements:
 diff --git a/app/config/services.yml b/app/config/services.yml
-index ebb0f82..ffb6772 100644
+index ebb0f82..5d968c4 100644
 --- a/app/config/services.yml
 +++ b/app/config/services.yml
 @@ -12,7 +12,7 @@ services:
@@ -24,7 +24,7 @@ index ebb0f82..ffb6772 100644
          tags:
              - { name: twig.extension }
  
-@@ -24,7 +24,7 @@ services:
+@@ -24,14 +24,14 @@ services:
  
      app.redirect_to_preferred_locale_listener:
          class: AppBundle\EventListener\RedirectToPreferredLocaleListener
@@ -33,6 +33,14 @@ index ebb0f82..ffb6772 100644
          tags:
              - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
  
+     app.form.type.datetimepicker:
+         class: AppBundle\Form\Type\DateTimePickerType
+         tags:
+-            - { name: form.type, alias: app_datetimepicker }
++            - { name: form.type }
+ 
+     # Uncomment the following lines to define a service for the Post Doctrine repository.
+     # It's not mandatory to create these services, but if you use repositories a lot,
 diff --git a/src/CodeExplorerBundle/Resources/config/services.yml b/src/CodeExplorerBundle/Resources/config/services.yml
 index 97ee376..419e25d 100644
 --- a/src/CodeExplorerBundle/Resources/config/services.yml
