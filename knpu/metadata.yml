@@ -26,7 +26,7 @@ chapters:
     new-dir-structure:
         video_key: 147421746
     fix-deprecations-in-bundles:
-        video_key: ~
+        video_key: 148214461
     deprecation-fixing-tools:
         video_key: ~
     fix-my-deprecations:
