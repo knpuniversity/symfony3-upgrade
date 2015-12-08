@@ -1,4 +1,4 @@
-# Fix Deprecation Warnings
+# Fix Deprecation Warnings from Bundles
 
 ***TIP
 The video for this tutorial will be ready **very** soon!
