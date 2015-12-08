@@ -28,7 +28,7 @@ chapters:
     fix-deprecations-in-bundles:
         video_key: 148214461
     deprecation-fixing-tools:
-        video_key: ~
+        video_key: 148240984
     fix-my-deprecations:
         video_key: ~
     upgrade-3.0:
