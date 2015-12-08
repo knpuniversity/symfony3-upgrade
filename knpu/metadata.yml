@@ -30,7 +30,7 @@ chapters:
     deprecation-fixing-tools:
         video_key: 148240984
     fix-my-deprecations:
-        video_key: ~
+        video_key: 148250923
     upgrade-3.0:
         is_finished: false
         video_key: ~
