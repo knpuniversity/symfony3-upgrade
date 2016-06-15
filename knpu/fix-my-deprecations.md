@@ -1,9 +1,5 @@
 # Fix My Deprecations
 
-***TIP
-The video for this tutorial will be ready **very** soon!
-***
-
 The last step is to find and eliminate the final deprecation warnings. Since the changes
 to the form system are some of the biggest, navigate to a page with a form. Woh, error!
 
