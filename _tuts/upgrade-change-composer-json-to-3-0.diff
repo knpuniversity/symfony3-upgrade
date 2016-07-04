@@ -1,13 +1,13 @@
 diff --git a/composer.json b/composer.json
-index 6e7afc7..e61b3eb 100644
+index cccaebe..075a573 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -28,7 +28,7 @@
-         "symfony/assetic-bundle"               : "~2.6",
+         "symfony/assetic-bundle"               : "~2.8",
          "symfony/monolog-bundle"               : "~2.7",
          "symfony/swiftmailer-bundle"           : "~2.3",
 -        "symfony/symfony"                      : "2.8.*@DEV",
-+        "symfony/symfony"                      : "3.0.*@BETA",
++        "symfony/symfony"                      : "3.0.*",
          "twig/extensions"                      : "~1.2"
      },
      "require-dev": {

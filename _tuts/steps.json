@@ -81,6 +81,11 @@
             "description": null
         },
         {
+            "id": "upgrade-upgrade-assetic",
+            "name": "Upgrade: upgrade assetic",
+            "description": null
+        },
+        {
             "id": "upgrade-change-composer-json-to-3-0",
             "name": "Upgrade: change composer.json to 3.0",
             "description": null
@@ -91,5 +96,5 @@
             "description": null
         }
     ],
-    "sha": "702a372b1ec9a25d6b27d303033a7b0a2785fae6"
+    "sha": "215c34f2c8e1c96b0463d3a389049e3f2d4dc9dc"
 }
