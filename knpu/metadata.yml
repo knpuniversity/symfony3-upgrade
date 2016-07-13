@@ -32,8 +32,6 @@ chapters:
     fix-my-deprecations:
         video_key: 148250923
     upgrade-outdated-libraries:
-        is_finished: false
-        video_key: ~
+        video_key: 174556954
     upgrade-3.0:
-        is_finished: false
-        video_key: ~
+        video_key: 174557489
