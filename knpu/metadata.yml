@@ -17,11 +17,11 @@ illustration: new-sf3.png
 
 tuts_hero:
     start_step: start
-    finish_step: ~
+    finish_step: upgrade-change-other-dep-versions
 
 chapters:
     upgrade-2.8:
-        is_free:     true
+        is_free: true
         video_key: 147413926
     new-dir-structure:
         video_key: 147421746
