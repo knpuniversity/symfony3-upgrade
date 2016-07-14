@@ -3,8 +3,11 @@
 We are now finally ready to upgrade our project to Symfony 3. How do we do that?
 It's a simple, 2 step process.
 
-First, in composer.json change the `symfony/symfony` key, to `3.0.*`. Or, if you're
-upgrading to any even new version, use that - like `3.1.*`.
+First, in `composer.json` change the `symfony/symfony` key, to `3.0.*`:
+
+[[[ code('5a15dfe776') ]]]
+
+Or, if you're upgrading to any even new version, use that - like `3.1.*`.
 
 Second, run `composer update`. This time, run it with *no* arguments:
 
@@ -15,7 +18,7 @@ composer update
 We technically *only* need to upgrade the `symfony/symfony` package, but since
 *so* many libraries depend on this, it's pretty tough to *only* update Symfony.
 If you're worried about too much stuff upgrading, make sure you version constraints
-in composer.json are really *tight*.
+in `composer.json` are really *tight*.
 
 But as we wait for this: I have a surprise! This will almost definitely not work.
 
@@ -27,31 +30,36 @@ installation for `sensio/distribution-bundle` requires `symfony/process` at vers
 2.2. In normal English, Composer is saying:
 
 > Yo! Your version of `sensio/distribution-bundle` in composer.json needs
-> `symfony/process` 2.2. You probably need to *upgrade* the distribution bundle to
-> a new version that works with `symfony/process` version 3.
+  `symfony/process` 2.2. You probably need to *upgrade* the distribution bundle to
+  a new version that works with `symfony/process` version 3.
 
 This means we need to update the version for `sensio/distribution-bundle` in `composer.json`
-to something higher. In these cases, I like to open [Packagist](packagist.org)
-and search for `symfony/symfony-framework-edition`. This is the project you get
-when you first download Symfony. We can cheat by looking at *its* composer.json
+to something higher. In these cases, I like to open [Packagist][packagist]
+and search for `symfony/framework-standard-edition`. This is the project you get
+when you first download Symfony. We can cheat by looking at *its* `composer.json`
 versions.
 
 Let's see what it looks like at the latest 3.0 version - 3.0.8. Ok - this project
 requires `sensio/distribution-bundle` at version `^5.0`. Open our `composer.json`
-and change it to match: `^5.0`.
+and change it to match: `^5.0`:
 
-That's it! Run composer update again:
+[[[ code('e6dd7f9f5c') ]]]
+
+That's it! Run Composer update again:
 
 ```bash
 composer update
 ```
 
 We *may* get another error about *another* library, but this is the process: run
-composer update, find the problematic package, update its version and repeat.
+`$ composer update`, find the problematic package, update its version and repeat.
 
 Yep: another problem. This time it's from `sensio/generator-bundle`. Go back to
-Packagist: the version in the Standard Edition is `^3.0`. Update our `composer.json`
-and run composer again:
+Packagist: the version in the Standard Edition is `^3.0`. Update our `composer.json`:
+
+[[[ code('33b8814e0e') ]]]
+
+And run Composer again:
 
 ```bash
 composer update
@@ -70,3 +78,6 @@ to run your tests and QA your site to make sure we didn't missing anything.
 All right, guys, if you have any questions, let me know.
 
 Seeya next time!
+
+
+[packagist]: https://packagist.org

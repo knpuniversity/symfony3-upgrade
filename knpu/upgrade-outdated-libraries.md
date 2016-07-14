@@ -13,14 +13,21 @@ In our app, we have this exact problem, with AsseticBundle. So before we upgrade
 to Symfony 3, we need to upgrade to a new version of that library that does *not*
 use old code.
 
-No problem! Google for AsseticBundle. I'll click into the link on [Packagist](https://packagist.org/packages/symfony/assetic-bundle).
+No problem! Google for AsseticBundle. I'll click into the link on [Packagist][1].
 I'm looking here to find the latest released version of Packagist, which right now,
 is 2.8.0. If we update to that, those deprecation warnings will *hopefully* go away.
 
-Open up `composer.json`. Our version is `~2.6`, but my PhpStorm Composer plugin tells
-me that we actually have 2.7.1. Let's require `2.8.0` by changing this to `^2.8`.
-The `^` symbol is the new hipster way to describe your version constraints - it
-basically allows 2.8 and higher, but not some future 3.0 version of AsseticBundle.
+Open up `composer.json`:
+
+[[[ code('9a7bfac68e') ]]]
+
+Our version is `~2.6`, but my PhpStorm Composer plugin tells me that we actually
+have 2.7.1. Let's require 2.8.0 by changing this to `^2.8`:
+
+[[[ code('a38321a983') ]]]
+
+The `^` symbol is the new hipster way to describe your version constraints - it basically
+allows 2.8 and higher, but not some future 3.0 version of AsseticBundle.
 
 Next, copy the library name - `symfony/assetic-bundle`. Since we *only* want to
 upgrade this library right now, find your terminal and run:
@@ -49,3 +56,6 @@ project - so I'm not going to take time to fix it.
 
 Ok, we've now upgraded all outside libraries that were not Symfony 3 compatible
 and our deprecation warnings are gone. We are ready.
+
+
+[1]: https://packagist.org/packages/symfony/assetic-bundle
