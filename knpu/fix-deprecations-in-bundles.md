@@ -1,9 +1,5 @@
 # Fix Deprecation Warnings from Bundles
 
-***TIP
-The video for this tutorial will be ready **very** soon!
-***
-
 Once you're on 2.8, there's a new game: find and fix deprecation notices. But there's
 a catch! You won't hit *all* of your code paths at runtime. Some code paths are only
 executed when the cache is being built. To hit those, start by clearing the cache:
