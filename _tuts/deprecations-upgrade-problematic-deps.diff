@@ -1,19 +1,17 @@
 diff --git a/composer.lock b/composer.lock
-index f206749..937b3a9 100644
+index e09b134..c54ade6 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,8 +4,8 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "hash": "4aec869a6b501085f55096913213b7cc",
--    "content-hash": "7dd99378871c03e17d39e2da0761c002",
-+    "hash": "56be994b21b444f8f727896212a0eaa6",
-+    "content-hash": "27a6970f8ea801280e2f638ac1771517",
+-    "content-hash": "b7745dd2d58082741903e259944f60bc",
++    "content-hash": "8b10af2863399cfd913dae8a99113b91",
      "packages": [
          {
              "name": "doctrine/annotations",
-@@ -1124,26 +1124,26 @@
+@@ -1123,26 +1123,26 @@
          },
          {
              "name": "knplabs/knp-paginator-bundle",
@@ -47,12 +45,12 @@ index f206749..937b3a9 100644
              },
              "type": "symfony-bundle",
              "extra": {
-@@ -1181,7 +1181,7 @@
+@@ -1180,7 +1180,7 @@
                  "pagination",
                  "paginator"
              ],
--            "time": "2015-09-07 04:31:31"
-+            "time": "2015-11-23 17:51:40"
+-            "time": "2015-09-07T04:31:31+00:00"
++            "time": "2015-11-23T17:51:40+00:00"
          },
          {
              "name": "kriswallsmith/assetic",
@@ -107,12 +105,12 @@ index f206749..937b3a9 100644
              },
              "suggest": {
                  "kriswallsmith/spork": "to be able to dump assets in parallel",
-@@ -1801,33 +1801,33 @@
-                 "compression",
+@@ -1802,33 +1802,33 @@
                  "minification"
              ],
--            "time": "2015-09-01 00:05:29"
-+            "time": "2015-11-17 09:45:47"
+             "abandoned": "symfony/webpack-encore-pack",
+-            "time": "2015-09-01T00:05:29+00:00"
++            "time": "2015-11-17T09:45:47+00:00"
          },
          {
              "name": "symfony/monolog-bundle",
@@ -152,12 +150,12 @@ index f206749..937b3a9 100644
              },
              "type": "symfony-bundle",
              "extra": {
-@@ -1860,7 +1860,7 @@
+@@ -1861,7 +1861,7 @@
                  "log",
                  "logging"
              ],
--            "time": "2015-10-02 11:51:59"
-+            "time": "2015-11-17 10:02:29"
+-            "time": "2015-10-02T11:51:59+00:00"
++            "time": "2015-11-17T10:02:29+00:00"
          },
          {
              "name": "symfony/polyfill-intl-icu",

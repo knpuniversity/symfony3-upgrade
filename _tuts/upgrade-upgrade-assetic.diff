@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 6e7afc7..cccaebe 100644
+index 81eb9f8..62e248b 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -25,7 +25,7 @@
@@ -12,17 +12,15 @@ index 6e7afc7..cccaebe 100644
          "symfony/swiftmailer-bundle"           : "~2.3",
          "symfony/symfony"                      : "2.8.*@DEV",
 diff --git a/composer.lock b/composer.lock
-index 937b3a9..19f711f 100644
+index c54ade6..634d98f 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,8 +4,8 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "hash": "56be994b21b444f8f727896212a0eaa6",
--    "content-hash": "27a6970f8ea801280e2f638ac1771517",
-+    "hash": "2c3c567955b77f315cf3486cd14ae5b3",
-+    "content-hash": "b7e78cfeaef8b1c551bc33245d200fd8",
+-    "content-hash": "8b10af2863399cfd913dae8a99113b91",
++    "content-hash": "e87f78805b0c2d5bd040a8cfd1ecd073",
      "packages": [
          {
              "name": "doctrine/annotations",
@@ -47,12 +45,12 @@ index 937b3a9..19f711f 100644
                  "shasum": ""
              },
              "require": {
-@@ -1801,7 +1801,7 @@
-                 "compression",
+@@ -1802,7 +1802,7 @@
                  "minification"
              ],
--            "time": "2015-11-17 09:45:47"
-+            "time": "2015-12-28 13:12:39"
+             "abandoned": "symfony/webpack-encore-pack",
+-            "time": "2015-11-17T09:45:47+00:00"
++            "time": "2015-12-28T13:12:39+00:00"
          },
          {
              "name": "symfony/monolog-bundle",

@@ -917,10 +917,10 @@ index 60ae0a8..0000000
 -    return $support;
 -}
 diff --git a/composer.json b/composer.json
-index 5d533c6..4e8c179 100644
+index 7272038..943e313 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -52,6 +52,9 @@
+@@ -57,6 +57,9 @@
      "extra": {
          "symfony-app-dir": "app",
          "symfony-web-dir": "web",

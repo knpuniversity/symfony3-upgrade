@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 995325f..7276223 100644
+index 77b6236..617d09b 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -24,7 +24,7 @@
@@ -12,21 +12,19 @@ index 995325f..7276223 100644
      },
      "require-dev": {
 diff --git a/composer.lock b/composer.lock
-index a2d119a..f206749 100644
+index c86870f..e09b134 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,8 +4,8 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "hash": "3f337c43cac919fc97cdfa0c0185eca2",
 -    "content-hash": "f1fbaf6bf9575dc8361bf4fe113506b4",
-+    "hash": "4aec869a6b501085f55096913213b7cc",
-+    "content-hash": "7dd99378871c03e17d39e2da0761c002",
++    "content-hash": "b7745dd2d58082741903e259944f60bc",
      "packages": [
          {
              "name": "doctrine/annotations",
-@@ -77,16 +77,16 @@
+@@ -76,16 +76,16 @@
          },
          {
              "name": "doctrine/cache",
@@ -47,7 +45,7 @@ index a2d119a..f206749 100644
                  "shasum": ""
              },
              "require": {
-@@ -107,8 +107,8 @@
+@@ -106,8 +106,8 @@
                  }
              },
              "autoload": {
@@ -58,16 +56,16 @@ index a2d119a..f206749 100644
                  }
              },
              "notification-url": "https://packagist.org/downloads/",
-@@ -143,7 +143,7 @@
+@@ -142,7 +142,7 @@
                  "cache",
                  "caching"
              ],
--            "time": "2015-08-31 12:36:41"
-+            "time": "2015-11-02 18:35:48"
+-            "time": "2015-08-31T12:36:41+00:00"
++            "time": "2015-11-02T18:35:48+00:00"
          },
          {
              "name": "doctrine/collections",
-@@ -492,48 +492,51 @@
+@@ -491,48 +491,51 @@
          },
          {
              "name": "doctrine/doctrine-cache-bundle",
@@ -137,7 +135,7 @@ index a2d119a..f206749 100644
                  }
              },
              "notification-url": "https://packagist.org/downloads/",
-@@ -566,13 +569,13 @@
+@@ -565,13 +568,13 @@
                      "email": "fabien@symfony.com"
                  }
              ],
@@ -148,12 +146,12 @@ index a2d119a..f206749 100644
                  "cache",
                  "caching"
              ],
--            "time": "2014-11-28 09:43:36"
-+            "time": "2015-11-27 04:59:07"
+-            "time": "2014-11-28T09:43:36+00:00"
++            "time": "2015-11-27T04:59:07+00:00"
          },
          {
              "name": "doctrine/doctrine-fixtures-bundle",
-@@ -633,16 +636,16 @@
+@@ -632,16 +635,16 @@
          },
          {
              "name": "doctrine/inflector",
@@ -174,7 +172,7 @@ index a2d119a..f206749 100644
                  "shasum": ""
              },
              "require": {
-@@ -654,7 +657,7 @@
+@@ -653,7 +656,7 @@
              "type": "library",
              "extra": {
                  "branch-alias": {
@@ -183,16 +181,16 @@ index a2d119a..f206749 100644
                  }
              },
              "autoload": {
-@@ -696,7 +699,7 @@
+@@ -695,7 +698,7 @@
                  "singularize",
                  "string"
              ],
--            "time": "2014-12-20 21:24:13"
-+            "time": "2015-11-06 14:35:42"
+-            "time": "2014-12-20T21:24:13+00:00"
++            "time": "2015-11-06T14:35:42+00:00"
          },
          {
              "name": "doctrine/lexer",
-@@ -1182,38 +1185,37 @@
+@@ -1181,38 +1184,37 @@
          },
          {
              "name": "kriswallsmith/assetic",
@@ -244,19 +242,20 @@ index a2d119a..f206749 100644
                  "twig/twig": "~1.8|~2.0"
              },
              "suggest": {
-@@ -1256,7 +1258,7 @@
+@@ -1255,7 +1257,7 @@
                  "compression",
                  "minification"
              ],
--            "time": "2015-10-15 01:33:42"
-+            "time": "2015-11-12 13:51:40"
+-            "time": "2015-10-15T01:33:42+00:00"
++            "time": "2015-11-12T13:51:40+00:00"
          },
          {
              "name": "leafo/scssphp",
-@@ -1392,6 +1394,54 @@
-             "time": "2015-10-14 12:51:02"
+@@ -1391,6 +1393,54 @@
+             ],
+             "time": "2015-10-14T12:51:02+00:00"
          },
-         {
++        {
 +            "name": "paragonie/random_compat",
 +            "version": "1.1.0",
 +            "source": {
@@ -302,12 +301,11 @@ index a2d119a..f206749 100644
 +                "pseudorandom",
 +                "random"
 +            ],
-+            "time": "2015-11-10 00:45:41"
++            "time": "2015-11-10T00:45:41+00:00"
 +        },
-+        {
+         {
              "name": "patchwork/jsqueeze",
              "version": "v1.0.7",
-             "source": {
 @@ -1588,20 +1638,20 @@
          },
          {
@@ -338,15 +336,16 @@ index a2d119a..f206749 100644
                  }
              ],
              "description": "A security checker for your composer.lock",
--            "time": "2015-08-11 12:11:25"
-+            "time": "2015-11-07 08:07:40"
+-            "time": "2015-08-11T12:11:25+00:00"
++            "time": "2015-11-07T08:07:40+00:00"
          },
          {
              "name": "swiftmailer/swiftmailer",
 @@ -1813,6 +1863,458 @@
-             "time": "2015-10-02 11:51:59"
+             ],
+             "time": "2015-10-02T11:51:59+00:00"
          },
-         {
++        {
 +            "name": "symfony/polyfill-intl-icu",
 +            "version": "v1.0.0",
 +            "source": {
@@ -399,7 +398,7 @@ index a2d119a..f206749 100644
 +                "portable",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/polyfill-mbstring",
@@ -455,7 +454,7 @@ index a2d119a..f206749 100644
 +                "portable",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/polyfill-php54",
@@ -513,7 +512,7 @@ index a2d119a..f206749 100644
 +                "portable",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/polyfill-php55",
@@ -569,7 +568,7 @@ index a2d119a..f206749 100644
 +                "portable",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/polyfill-php56",
@@ -625,7 +624,7 @@ index a2d119a..f206749 100644
 +                "portable",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/polyfill-php70",
@@ -684,7 +683,7 @@ index a2d119a..f206749 100644
 +                "portable",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/polyfill-util",
@@ -736,7 +735,7 @@ index a2d119a..f206749 100644
 +                "polyfill",
 +                "shim"
 +            ],
-+            "time": "2015-11-04 20:28:58"
++            "time": "2015-11-04T20:28:58+00:00"
 +        },
 +        {
 +            "name": "symfony/security-acl",
@@ -796,13 +795,12 @@ index a2d119a..f206749 100644
 +            ],
 +            "description": "Symfony Security Component - ACL (Access Control List)",
 +            "homepage": "https://symfony.com",
-+            "time": "2015-11-18 13:41:01"
++            "time": "2015-11-18T13:41:01+00:00"
 +        },
-+        {
+         {
              "name": "symfony/swiftmailer-bundle",
              "version": "v2.3.8",
-             "source": {
-@@ -1871,23 +2373,34 @@
+@@ -1872,23 +2374,34 @@
          },
          {
              "name": "symfony/symfony",
@@ -842,7 +840,7 @@ index a2d119a..f206749 100644
              },
              "replace": {
                  "symfony/asset": "self.version",
-@@ -1910,18 +2423,20 @@
+@@ -1911,18 +2424,20 @@
                  "symfony/http-foundation": "self.version",
                  "symfony/http-kernel": "self.version",
                  "symfony/intl": "self.version",
@@ -864,7 +862,7 @@ index a2d119a..f206749 100644
                  "symfony/security-http": "self.version",
                  "symfony/serializer": "self.version",
                  "symfony/stopwatch": "self.version",
-@@ -1941,14 +2456,14 @@
+@@ -1942,14 +2457,14 @@
                  "doctrine/doctrine-bundle": "~1.2",
                  "doctrine/orm": "~2.4,>=2.4.5",
                  "egulias/email-validator": "~1.2",
@@ -882,7 +880,7 @@ index a2d119a..f206749 100644
                  }
              },
              "autoload": {
-@@ -1962,11 +2477,10 @@
+@@ -1963,11 +2478,10 @@
                      "Symfony\\Component\\": "src/Symfony/Component/"
                  },
                  "classmap": [
@@ -896,16 +894,16 @@ index a2d119a..f206749 100644
                  ]
              },
              "notification-url": "https://packagist.org/downloads/",
-@@ -1988,7 +2502,7 @@
+@@ -1989,7 +2503,7 @@
              "keywords": [
                  "framework"
              ],
--            "time": "2015-10-27 19:07:24"
-+            "time": "2015-11-30 17:26:10"
+-            "time": "2015-10-27T19:07:24+00:00"
++            "time": "2015-11-30T17:26:10+00:00"
          },
          {
              "name": "twig/extensions",
-@@ -2044,16 +2558,16 @@
+@@ -2045,16 +2559,16 @@
          },
          {
              "name": "twig/twig",
@@ -926,7 +924,7 @@ index a2d119a..f206749 100644
                  "shasum": ""
              },
              "require": {
-@@ -2066,7 +2580,7 @@
+@@ -2067,7 +2581,7 @@
              "type": "library",
              "extra": {
                  "branch-alias": {
@@ -935,16 +933,16 @@ index a2d119a..f206749 100644
                  }
              },
              "autoload": {
-@@ -2101,7 +2615,7 @@
+@@ -2102,7 +2616,7 @@
              "keywords": [
                  "templating"
              ],
--            "time": "2015-10-13 07:07:02"
-+            "time": "2015-11-05 12:49:06"
+-            "time": "2015-10-13T07:07:02+00:00"
++            "time": "2015-11-05T12:49:06+00:00"
          }
      ],
      "packages-dev": [
-@@ -2156,15 +2670,14 @@
+@@ -2158,7 +2672,9 @@
      ],
      "aliases": [],
      "minimum-stability": "stable",
@@ -955,12 +953,3 @@ index a2d119a..f206749 100644
      "prefer-stable": false,
      "prefer-lowest": false,
      "platform": {
-         "php": ">=5.3.9",
-         "ext-pdo_sqlite": "*"
-     },
--    "platform-dev": [],
--    "platform-overrides": {
--        "php": "5.3.9"
--    }
-+    "platform-dev": []
- }

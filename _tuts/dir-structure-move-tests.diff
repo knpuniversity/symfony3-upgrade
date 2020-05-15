@@ -1,55 +1,5 @@
-diff --git a/app/phpunit.xml.dist b/app/phpunit.xml.dist
-deleted file mode 100644
-index bd24527..0000000
---- a/app/phpunit.xml.dist
-+++ /dev/null
-@@ -1,44 +0,0 @@
--<?xml version="1.0" encoding="UTF-8"?>
--
--<!-- http://phpunit.de/manual/current/en/appendixes.configuration.html -->
--<phpunit
--    backupGlobals               = "false"
--    backupStaticAttributes      = "false"
--    colors                      = "true"
--    convertErrorsToExceptions   = "true"
--    convertNoticesToExceptions  = "true"
--    convertWarningsToExceptions = "true"
--    processIsolation            = "false"
--    stopOnFailure               = "false"
--    syntaxCheck                 = "false"
--    bootstrap                   = "bootstrap.php.cache" >
--
--    <testsuites>
--        <testsuite name="Project Test Suite">
--            <directory>../src/*Bundle/Tests</directory>
--            <directory>../src/*/*Bundle/Tests</directory>
--            <directory>../src/*/Bundle/*Bundle/Tests</directory>
--        </testsuite>
--    </testsuites>
--
--    <!--
--    <php>
--        <server name="KERNEL_DIR" value="/path/to/your/app/" />
--    </php>
--    -->
--
--    <filter>
--        <whitelist>
--            <directory>../src</directory>
--            <exclude>
--                <directory>../src/*Bundle/Resources</directory>
--                <directory>../src/*Bundle/Tests</directory>
--                <directory>../src/*/*Bundle/Resources</directory>
--                <directory>../src/*/*Bundle/Tests</directory>
--                <directory>../src/*/Bundle/*Bundle/Resources</directory>
--                <directory>../src/*/Bundle/*Bundle/Tests</directory>
--            </exclude>
--        </whitelist>
--    </filter>
--
--</phpunit>
 diff --git a/composer.json b/composer.json
-index 4e8c179..6e7afc7 100644
+index 943e313..81eb9f8 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -7,6 +7,9 @@
@@ -62,601 +12,71 @@ index 4e8c179..6e7afc7 100644
      "require": {
          "php"                                  : ">=5.3.9",
          "ext-pdo_sqlite"                       : "*",
-diff --git a/phpunit.xml.dist b/phpunit.xml.dist
-new file mode 100644
-index 0000000..bd24527
---- /dev/null
-+++ b/phpunit.xml.dist
-@@ -0,0 +1,44 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+
-+<!-- http://phpunit.de/manual/current/en/appendixes.configuration.html -->
-+<phpunit
-+    backupGlobals               = "false"
-+    backupStaticAttributes      = "false"
-+    colors                      = "true"
-+    convertErrorsToExceptions   = "true"
-+    convertNoticesToExceptions  = "true"
-+    convertWarningsToExceptions = "true"
-+    processIsolation            = "false"
-+    stopOnFailure               = "false"
-+    syntaxCheck                 = "false"
-+    bootstrap                   = "bootstrap.php.cache" >
-+
-+    <testsuites>
-+        <testsuite name="Project Test Suite">
-+            <directory>../src/*Bundle/Tests</directory>
-+            <directory>../src/*/*Bundle/Tests</directory>
-+            <directory>../src/*/Bundle/*Bundle/Tests</directory>
-+        </testsuite>
-+    </testsuites>
-+
-+    <!--
-+    <php>
-+        <server name="KERNEL_DIR" value="/path/to/your/app/" />
-+    </php>
-+    -->
-+
-+    <filter>
-+        <whitelist>
-+            <directory>../src</directory>
-+            <exclude>
-+                <directory>../src/*Bundle/Resources</directory>
-+                <directory>../src/*Bundle/Tests</directory>
-+                <directory>../src/*/*Bundle/Resources</directory>
-+                <directory>../src/*/*Bundle/Tests</directory>
-+                <directory>../src/*/Bundle/*Bundle/Resources</directory>
-+                <directory>../src/*/Bundle/*Bundle/Tests</directory>
-+            </exclude>
-+        </whitelist>
-+    </filter>
-+
-+</phpunit>
-diff --git a/src/AppBundle/Tests/Controller/Admin/BlogControllerTest.php b/src/AppBundle/Tests/Controller/Admin/BlogControllerTest.php
-deleted file mode 100644
-index 873ecc7..0000000
+diff --git a/app/phpunit.xml.dist b/phpunit.xml.dist
+similarity index 100%
+rename from app/phpunit.xml.dist
+rename to phpunit.xml.dist
+diff --git a/src/AppBundle/Tests/Controller/Admin/BlogControllerTest.php b/tests/AppBundle/Controller/Admin/BlogControllerTest.php
+similarity index 98%
+rename from src/AppBundle/Tests/Controller/Admin/BlogControllerTest.php
+rename to tests/AppBundle/Controller/Admin/BlogControllerTest.php
+index 873ecc7..ae906dc 100644
 --- a/src/AppBundle/Tests/Controller/Admin/BlogControllerTest.php
-+++ /dev/null
-@@ -1,74 +0,0 @@
--<?php
--
--/*
-- * This file is part of the Symfony package.
-- *
-- * (c) Fabien Potencier <fabien@symfony.com>
-- *
-- * For the full copyright and license information, please view the LICENSE
-- * file that was distributed with this source code.
-- */
--
--namespace AppBundle\Tests\Controller\Admin;
--
--use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
--use Symfony\Component\HttpFoundation\Response;
--use AppBundle\Entity\Post;
--
--/**
-- * Functional test for the controllers defined inside the BlogController used
-- * for managing the blog in the backend.
-- * See http://symfony.com/doc/current/book/testing.html#functional-tests
-- *
-- * Whenever you test resources protected by a firewall, consider using the
-- * technique explained in:
-- * http://symfony.com/doc/current/cookbook/testing/http_authentication.html
-- *
-- * Execute the application tests using this command (requires PHPUnit to be installed):
-- *
-- *     $ cd your-symfony-project/
-- *     $ phpunit -c app
-- *
-- */
--class BlogControllerTest extends WebTestCase
--{
--    public function testRegularUsersCannotAccessToTheBackend()
--    {
--        $client = static::createClient(array(), array(
--            'PHP_AUTH_USER' => 'john_user',
--            'PHP_AUTH_PW'   => 'kitten',
--        ));
--
--        $client->request('GET', '/en/admin/post/');
--
--        $this->assertEquals(Response::HTTP_FORBIDDEN, $client->getResponse()->getStatusCode());
--    }
--
--    public function testAdministratorUsersCanAccessToTheBackend()
--    {
--        $client = static::createClient(array(), array(
--            'PHP_AUTH_USER' => 'anna_admin',
--            'PHP_AUTH_PW'   => 'kitten',
--        ));
--
--        $client->request('GET', '/en/admin/post/');
--
--        $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
--    }
--
--    public function testIndex()
--    {
--        $client = static::createClient(array(), array(
--            'PHP_AUTH_USER' => 'anna_admin',
--            'PHP_AUTH_PW'   => 'kitten',
--        ));
--
--        $crawler = $client->request('GET', '/en/admin/post/');
--
--        $this->assertCount(
--            Post::NUM_ITEMS,
--            $crawler->filter('body#admin_post_index #main tbody tr'),
--            'The backend homepage displays the right number of posts.'
--        );
--    }
--}
-diff --git a/src/AppBundle/Tests/Controller/BlogControllerTest.php b/src/AppBundle/Tests/Controller/BlogControllerTest.php
-deleted file mode 100644
-index 43c5aa7..0000000
---- a/src/AppBundle/Tests/Controller/BlogControllerTest.php
-+++ /dev/null
-@@ -1,40 +0,0 @@
--<?php
--
--/*
-- * This file is part of the Symfony package.
-- *
-- * (c) Fabien Potencier <fabien@symfony.com>
-- *
-- * For the full copyright and license information, please view the LICENSE
-- * file that was distributed with this source code.
-- */
--
--namespace AppBundle\Tests\Controller;
--
--use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
--use AppBundle\Entity\Post;
--
--/**
-- * Functional test for the controllers defined inside BlogController.
-- * See http://symfony.com/doc/current/book/testing.html#functional-tests
-- *
-- * Execute the application tests using this command (requires PHPUnit to be installed):
-- *
-- *     $ cd your-symfony-project/
-- *     $ phpunit -c app
-- *
-- */
--class BlogControllerTest extends WebTestCase
--{
--    public function testIndex()
--    {
--        $client = static::createClient();
--        $crawler = $client->request('GET', '/en/blog/');
--
--        $this->assertCount(
--            Post::NUM_ITEMS,
--            $crawler->filter('article.post'),
--            'The homepage displays the right number of posts.'
--        );
--    }
--}
-diff --git a/src/AppBundle/Tests/Controller/DefaultControllerTest.php b/src/AppBundle/Tests/Controller/DefaultControllerTest.php
-deleted file mode 100644
-index 24f6812..0000000
---- a/src/AppBundle/Tests/Controller/DefaultControllerTest.php
-+++ /dev/null
-@@ -1,87 +0,0 @@
--<?php
--
--/*
-- * This file is part of the Symfony package.
-- *
-- * (c) Fabien Potencier <fabien@symfony.com>
-- *
-- * For the full copyright and license information, please view the LICENSE
-- * file that was distributed with this source code.
-- */
--
--namespace AppBundle\Tests\Controller;
--
--use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
--
--/**
-- * Functional test that implements a "smoke test" of all the public and secure
-- * URLs of the application.
-- * See http://symfony.com/doc/current/best_practices/tests.html#functional-tests.
-- *
-- * Execute the application tests using this command (requires PHPUnit to be installed):
-- *
-- *     $ cd your-symfony-project/
-- *     $ phpunit -c app
-- *
-- */
--class DefaultControllerTest extends WebTestCase
--{
--    /**
--     * PHPUnit's data providers allow to execute the same tests repeated times
--     * using a different set of data each time.
--     * See http://symfony.com/doc/current/cookbook/form/unit_testing.html#testing-against-different-sets-of-data.
--     *
--     * @dataProvider getPublicUrls
--     */
--    public function testPublicUrls($url)
--    {
--        $client = self::createClient();
--        $client->request('GET', $url);
--
--        $this->assertTrue(
--            $client->getResponse()->isSuccessful(),
--            sprintf('The %s public URL loads correctly.', $url)
--        );
--    }
--
--    /**
--     * The application contains a lot of secure URLs which shouldn't be
--     * publicly accessible. This tests ensures that whenever a user tries to
--     * access one of those pages, a redirection to the login form is performed.
--     *
--     * @dataProvider getSecureUrls
--     */
--    public function testSecureUrls($url)
--    {
--        $client = self::createClient();
--        $client->request('GET', $url);
--
--        $this->assertTrue($client->getResponse()->isRedirect());
--
--        $this->assertEquals(
--            'http://localhost/en/login',
--            $client->getResponse()->getTargetUrl(),
--            sprintf('The %s secure URL redirects to the login form.', $url)
--        );
--    }
--
--    public function getPublicUrls()
--    {
--        return array(
--            array('/'),
--            array('/en/blog/'),
--            array('/en/blog/posts/morbi-tempus-commodo-mattis'),
--            array('/en/login'),
--        );
--    }
--
--    public function getSecureUrls()
--    {
--        return array(
--            array('/en/admin/post/'),
--            array('/en/admin/post/new'),
--            array('/en/admin/post/1'),
--            array('/en/admin/post/1/edit'),
--        );
--    }
--}
-diff --git a/src/AppBundle/Tests/Utils/SluggerTest.php b/src/AppBundle/Tests/Utils/SluggerTest.php
-deleted file mode 100644
-index 6f67724..0000000
---- a/src/AppBundle/Tests/Utils/SluggerTest.php
-+++ /dev/null
-@@ -1,49 +0,0 @@
--<?php
--
--/*
-- * This file is part of the Symfony package.
-- *
-- * (c) Fabien Potencier <fabien@symfony.com>
-- *
-- * For the full copyright and license information, please view the LICENSE
-- * file that was distributed with this source code.
-- */
--
--namespace Tests\Utils;
--
--use AppBundle\Utils\Slugger;
--
--/**
-- * Unit test for the application utils.
-- * See http://symfony.com/doc/current/book/testing.html#unit-tests
-- *
-- * Execute the application tests using this command (requires PHPUnit to be installed):
-- *
-- *     $ cd your-symfony-project/
-- *     $ phpunit -c app
-- *
-- */
--class SluggerTest extends \PHPUnit_Framework_TestCase
--{
--    /**
--     * @dataProvider getSlugs
--     */
--    public function testSlugify($string, $slug)
--    {
--        $slugger = new Slugger();
--        $result = $slugger->slugify($string);
--
--        $this->assertEquals($slug, $result);
--    }
--
--    public function getSlugs()
--    {
--        return array(
--            array('Lorem Ipsum'     , 'lorem-ipsum'),
--            array('  Lorem Ipsum  ' , 'lorem-ipsum'),
--            array(' lOrEm  iPsUm  ' , 'lorem-ipsum'),
--            array('!Lorem Ipsum!'   , 'lorem-ipsum'),
--            array('lorem-ipsum'     , 'lorem-ipsum'),
--        );
--    }
--}
-diff --git a/tests/AppBundle/Controller/Admin/BlogControllerTest.php b/tests/AppBundle/Controller/Admin/BlogControllerTest.php
-new file mode 100644
-index 0000000..ae906dc
---- /dev/null
 +++ b/tests/AppBundle/Controller/Admin/BlogControllerTest.php
-@@ -0,0 +1,74 @@
-+<?php
-+
-+/*
-+ * This file is part of the Symfony package.
-+ *
-+ * (c) Fabien Potencier <fabien@symfony.com>
-+ *
-+ * For the full copyright and license information, please view the LICENSE
-+ * file that was distributed with this source code.
-+ */
-+
+@@ -9,7 +9,7 @@
+  * file that was distributed with this source code.
+  */
+ 
+-namespace AppBundle\Tests\Controller\Admin;
 +namespace Tests\AppBundle\Controller\Admin;
-+
-+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-+use Symfony\Component\HttpFoundation\Response;
-+use AppBundle\Entity\Post;
-+
-+/**
-+ * Functional test for the controllers defined inside the BlogController used
-+ * for managing the blog in the backend.
-+ * See http://symfony.com/doc/current/book/testing.html#functional-tests
-+ *
-+ * Whenever you test resources protected by a firewall, consider using the
-+ * technique explained in:
-+ * http://symfony.com/doc/current/cookbook/testing/http_authentication.html
-+ *
-+ * Execute the application tests using this command (requires PHPUnit to be installed):
-+ *
-+ *     $ cd your-symfony-project/
-+ *     $ phpunit -c app
-+ *
-+ */
-+class BlogControllerTest extends WebTestCase
-+{
-+    public function testRegularUsersCannotAccessToTheBackend()
-+    {
-+        $client = static::createClient(array(), array(
-+            'PHP_AUTH_USER' => 'john_user',
-+            'PHP_AUTH_PW'   => 'kitten',
-+        ));
-+
-+        $client->request('GET', '/en/admin/post/');
-+
-+        $this->assertEquals(Response::HTTP_FORBIDDEN, $client->getResponse()->getStatusCode());
-+    }
-+
-+    public function testAdministratorUsersCanAccessToTheBackend()
-+    {
-+        $client = static::createClient(array(), array(
-+            'PHP_AUTH_USER' => 'anna_admin',
-+            'PHP_AUTH_PW'   => 'kitten',
-+        ));
-+
-+        $client->request('GET', '/en/admin/post/');
-+
-+        $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
-+    }
-+
-+    public function testIndex()
-+    {
-+        $client = static::createClient(array(), array(
-+            'PHP_AUTH_USER' => 'anna_admin',
-+            'PHP_AUTH_PW'   => 'kitten',
-+        ));
-+
-+        $crawler = $client->request('GET', '/en/admin/post/');
-+
-+        $this->assertCount(
-+            Post::NUM_ITEMS,
-+            $crawler->filter('body#admin_post_index #main tbody tr'),
-+            'The backend homepage displays the right number of posts.'
-+        );
-+    }
-+}
-diff --git a/tests/AppBundle/Controller/BlogControllerTest.php b/tests/AppBundle/Controller/BlogControllerTest.php
-new file mode 100644
-index 0000000..793a169
---- /dev/null
+ 
+ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+ use Symfony\Component\HttpFoundation\Response;
+diff --git a/src/AppBundle/Tests/Controller/BlogControllerTest.php b/tests/AppBundle/Controller/BlogControllerTest.php
+similarity index 96%
+rename from src/AppBundle/Tests/Controller/BlogControllerTest.php
+rename to tests/AppBundle/Controller/BlogControllerTest.php
+index 43c5aa7..793a169 100644
+--- a/src/AppBundle/Tests/Controller/BlogControllerTest.php
 +++ b/tests/AppBundle/Controller/BlogControllerTest.php
-@@ -0,0 +1,40 @@
-+<?php
-+
-+/*
-+ * This file is part of the Symfony package.
-+ *
-+ * (c) Fabien Potencier <fabien@symfony.com>
-+ *
-+ * For the full copyright and license information, please view the LICENSE
-+ * file that was distributed with this source code.
-+ */
-+
+@@ -9,7 +9,7 @@
+  * file that was distributed with this source code.
+  */
+ 
+-namespace AppBundle\Tests\Controller;
 +namespace Tests\AppBundle\Controller;
-+
-+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-+use AppBundle\Entity\Post;
-+
-+/**
-+ * Functional test for the controllers defined inside BlogController.
-+ * See http://symfony.com/doc/current/book/testing.html#functional-tests
-+ *
-+ * Execute the application tests using this command (requires PHPUnit to be installed):
-+ *
-+ *     $ cd your-symfony-project/
-+ *     $ phpunit -c app
-+ *
-+ */
-+class BlogControllerTest extends WebTestCase
-+{
-+    public function testIndex()
-+    {
-+        $client = static::createClient();
-+        $crawler = $client->request('GET', '/en/blog/');
-+
-+        $this->assertCount(
-+            Post::NUM_ITEMS,
-+            $crawler->filter('article.post'),
-+            'The homepage displays the right number of posts.'
-+        );
-+    }
-+}
-diff --git a/tests/AppBundle/Controller/DefaultControllerTest.php b/tests/AppBundle/Controller/DefaultControllerTest.php
-new file mode 100644
-index 0000000..5eea3ff
---- /dev/null
+ 
+ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+ use AppBundle\Entity\Post;
+diff --git a/src/AppBundle/Tests/Controller/DefaultControllerTest.php b/tests/AppBundle/Controller/DefaultControllerTest.php
+similarity index 98%
+rename from src/AppBundle/Tests/Controller/DefaultControllerTest.php
+rename to tests/AppBundle/Controller/DefaultControllerTest.php
+index 24f6812..5eea3ff 100644
+--- a/src/AppBundle/Tests/Controller/DefaultControllerTest.php
 +++ b/tests/AppBundle/Controller/DefaultControllerTest.php
-@@ -0,0 +1,87 @@
-+<?php
-+
-+/*
-+ * This file is part of the Symfony package.
-+ *
-+ * (c) Fabien Potencier <fabien@symfony.com>
-+ *
-+ * For the full copyright and license information, please view the LICENSE
-+ * file that was distributed with this source code.
-+ */
-+
+@@ -9,7 +9,7 @@
+  * file that was distributed with this source code.
+  */
+ 
+-namespace AppBundle\Tests\Controller;
 +namespace Tests\AppBundle\Controller;
-+
-+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-+
-+/**
-+ * Functional test that implements a "smoke test" of all the public and secure
-+ * URLs of the application.
-+ * See http://symfony.com/doc/current/best_practices/tests.html#functional-tests.
-+ *
-+ * Execute the application tests using this command (requires PHPUnit to be installed):
-+ *
-+ *     $ cd your-symfony-project/
-+ *     $ phpunit -c app
-+ *
-+ */
-+class DefaultControllerTest extends WebTestCase
-+{
-+    /**
-+     * PHPUnit's data providers allow to execute the same tests repeated times
-+     * using a different set of data each time.
-+     * See http://symfony.com/doc/current/cookbook/form/unit_testing.html#testing-against-different-sets-of-data.
-+     *
-+     * @dataProvider getPublicUrls
-+     */
-+    public function testPublicUrls($url)
-+    {
-+        $client = self::createClient();
-+        $client->request('GET', $url);
-+
-+        $this->assertTrue(
-+            $client->getResponse()->isSuccessful(),
-+            sprintf('The %s public URL loads correctly.', $url)
-+        );
-+    }
-+
-+    /**
-+     * The application contains a lot of secure URLs which shouldn't be
-+     * publicly accessible. This tests ensures that whenever a user tries to
-+     * access one of those pages, a redirection to the login form is performed.
-+     *
-+     * @dataProvider getSecureUrls
-+     */
-+    public function testSecureUrls($url)
-+    {
-+        $client = self::createClient();
-+        $client->request('GET', $url);
-+
-+        $this->assertTrue($client->getResponse()->isRedirect());
-+
-+        $this->assertEquals(
-+            'http://localhost/en/login',
-+            $client->getResponse()->getTargetUrl(),
-+            sprintf('The %s secure URL redirects to the login form.', $url)
-+        );
-+    }
-+
-+    public function getPublicUrls()
-+    {
-+        return array(
-+            array('/'),
-+            array('/en/blog/'),
-+            array('/en/blog/posts/morbi-tempus-commodo-mattis'),
-+            array('/en/login'),
-+        );
-+    }
-+
-+    public function getSecureUrls()
-+    {
-+        return array(
-+            array('/en/admin/post/'),
-+            array('/en/admin/post/new'),
-+            array('/en/admin/post/1'),
-+            array('/en/admin/post/1/edit'),
-+        );
-+    }
-+}
-diff --git a/tests/AppBundle/Utils/SluggerTest.php b/tests/AppBundle/Utils/SluggerTest.php
-new file mode 100644
-index 0000000..b3baa44
---- /dev/null
+ 
+ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+ 
+diff --git a/src/AppBundle/Tests/Utils/SluggerTest.php b/tests/AppBundle/Utils/SluggerTest.php
+similarity index 97%
+rename from src/AppBundle/Tests/Utils/SluggerTest.php
+rename to tests/AppBundle/Utils/SluggerTest.php
+index 6f67724..b3baa44 100644
+--- a/src/AppBundle/Tests/Utils/SluggerTest.php
 +++ b/tests/AppBundle/Utils/SluggerTest.php
-@@ -0,0 +1,49 @@
-+<?php
-+
-+/*
-+ * This file is part of the Symfony package.
-+ *
-+ * (c) Fabien Potencier <fabien@symfony.com>
-+ *
-+ * For the full copyright and license information, please view the LICENSE
-+ * file that was distributed with this source code.
-+ */
-+
+@@ -9,7 +9,7 @@
+  * file that was distributed with this source code.
+  */
+ 
+-namespace Tests\Utils;
 +namespace Tests\AppBundle\Utils;
-+
-+use AppBundle\Utils\Slugger;
-+
-+/**
-+ * Unit test for the application utils.
-+ * See http://symfony.com/doc/current/book/testing.html#unit-tests
-+ *
-+ * Execute the application tests using this command (requires PHPUnit to be installed):
-+ *
-+ *     $ cd your-symfony-project/
-+ *     $ phpunit -c app
-+ *
-+ */
-+class SluggerTest extends \PHPUnit_Framework_TestCase
-+{
-+    /**
-+     * @dataProvider getSlugs
-+     */
-+    public function testSlugify($string, $slug)
-+    {
-+        $slugger = new Slugger();
-+        $result = $slugger->slugify($string);
-+
-+        $this->assertEquals($slug, $result);
-+    }
-+
-+    public function getSlugs()
-+    {
-+        return array(
-+            array('Lorem Ipsum'     , 'lorem-ipsum'),
-+            array('  Lorem Ipsum  ' , 'lorem-ipsum'),
-+            array(' lOrEm  iPsUm  ' , 'lorem-ipsum'),
-+            array('!Lorem Ipsum!'   , 'lorem-ipsum'),
-+            array('lorem-ipsum'     , 'lorem-ipsum'),
-+        );
-+    }
-+}
+ 
+ use AppBundle\Utils\Slugger;
+ 

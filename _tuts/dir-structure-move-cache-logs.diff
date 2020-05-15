@@ -22,15 +22,11 @@ index 7206f61..24cfb6d 100644
 +        return dirname(__DIR__).'/var/logs';
 +    }
  }
-diff --git a/app/cache/.gitkeep b/app/cache/.gitkeep
-deleted file mode 100644
-index e69de29..0000000
-diff --git a/app/logs/.gitkeep b/app/logs/.gitkeep
-deleted file mode 100644
-index e69de29..0000000
-diff --git a/var/cache/.gitkeep b/var/cache/.gitkeep
-new file mode 100644
-index 0000000..e69de29
-diff --git a/var/logs/.gitkeep b/var/logs/.gitkeep
-new file mode 100644
-index 0000000..e69de29
+diff --git a/app/cache/.gitkeep b/var/cache/.gitkeep
+similarity index 100%
+rename from app/cache/.gitkeep
+rename to var/cache/.gitkeep
+diff --git a/app/logs/.gitkeep b/var/logs/.gitkeep
+similarity index 100%
+rename from app/logs/.gitkeep
+rename to var/logs/.gitkeep
